@@ -62,6 +62,442 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-nginx介绍与配置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/nginx介绍与配置/" class="article-date">
+  <time datetime="2019-05-15T14:14:15.000Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/15/nginx介绍与配置/">nginx介绍与配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Nginx同Apache一样都是一种WEB服务器。基于REST架构风格，以统一资源描述符(Uniform Resources Identifier)URI或者统一资源定位符(Uniform Resources Locator)URL作为沟通依据，通过HTTP协议提供各种网络服务。<br>Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器；同时也是一个IMAP、POP3、SMTP代理服务器；Nginx可以作为一个HTTP服务器进行网站的发布处理，另外Nginx可以作为反向代理进行负载均衡的实现。</p>
+<h2 id="nginx基本配置与参数说明"><a href="#nginx基本配置与参数说明" class="headerlink" title="nginx基本配置与参数说明"></a>nginx基本配置与参数说明</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#运行用户</span></span><br><span class="line">user nobody;</span><br><span class="line"><span class="comment">#启动进程,通常设置成和cpu的数量相等</span></span><br><span class="line">worker_processes  <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#全局错误日志及PID文件</span></span><br><span class="line"><span class="comment">#error_log  logs/error.log;</span></span><br><span class="line"><span class="comment">#error_log  logs/error.log  notice;</span></span><br><span class="line"><span class="comment">#error_log  logs/error.log  info;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#pid        logs/nginx.pid;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#工作模式及连接数上限</span></span><br><span class="line">events &#123;</span><br><span class="line">    <span class="comment">#epoll是多路复用IO(I/O Multiplexing)中的一种方式,</span></span><br><span class="line">    <span class="comment">#仅用于linux2.6以上内核,可以大大提高nginx的性能</span></span><br><span class="line">    <span class="keyword">use</span>   <span class="title">epoll</span>; </span><br><span class="line"></span><br><span class="line">    <span class="comment">#单个后台worker process进程的最大并发链接数    </span></span><br><span class="line">    worker_connections  <span class="number">1024</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 并发总数是 worker_processes 和 worker_connections 的乘积</span></span><br><span class="line">    <span class="comment"># 即 max_clients = worker_processes * worker_connections</span></span><br><span class="line">    <span class="comment"># 在设置了反向代理的情况下，max_clients = worker_processes * worker_connections / 4  为什么</span></span><br><span class="line">    <span class="comment"># 为什么上面反向代理要除以4，应该说是一个经验值</span></span><br><span class="line">    <span class="comment"># 根据以上条件，正常情况下的Nginx Server可以应付的最大连接数为：4 * 8000 = 32000</span></span><br><span class="line">    <span class="comment"># worker_connections 值的设置跟物理内存大小有关</span></span><br><span class="line">    <span class="comment"># 因为并发受IO约束，max_clients的值须小于系统可以打开的最大文件数</span></span><br><span class="line">    <span class="comment"># 而系统可以打开的最大文件数和内存大小成正比，一般1GB内存的机器上可以打开的文件数大约是10万左右</span></span><br><span class="line">    <span class="comment"># 我们来看看360M内存的VPS可以打开的文件句柄数是多少：</span></span><br><span class="line">    <span class="comment"># $ cat /proc/sys/fs/file-max</span></span><br><span class="line">    <span class="comment"># 输出 34336</span></span><br><span class="line">    <span class="comment"># 32000 &lt; 34336，即并发连接总数小于系统可以打开的文件句柄总数，这样就在操作系统可以承受的范围之内</span></span><br><span class="line">    <span class="comment"># 所以，worker_connections 的值需根据 worker_processes 进程数目和系统可以打开的最大文件总数进行适当地进行设置</span></span><br><span class="line">    <span class="comment"># 使得并发总数小于操作系统可以打开的最大文件数目</span></span><br><span class="line">    <span class="comment"># 其实质也就是根据主机的物理CPU和内存进行配置</span></span><br><span class="line">    <span class="comment"># 当然，理论上的并发总数可能会和实际有所偏差，因为主机还有其他的工作进程需要消耗系统资源。</span></span><br><span class="line">    <span class="comment"># ulimit -SHn 65535</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    <span class="comment">#设定mime类型,类型由mime.type文件定义</span></span><br><span class="line">    <span class="keyword">include</span>    mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line">    <span class="comment">#设定日志格式</span></span><br><span class="line">    log_format  main  <span class="string">'$remote_addr - $remote_user [$time_local] "$request" '</span></span><br><span class="line">                      <span class="string">'$status $body_bytes_sent "$http_referer" '</span></span><br><span class="line">                      <span class="string">'"$http_user_agent" "$http_x_forwarded_for"'</span>;</span><br><span class="line"></span><br><span class="line">    access_log  logs/access.log  main;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#sendfile 指令指定 nginx 是否调用 sendfile 函数（zero copy 方式）来输出文件，</span></span><br><span class="line">    <span class="comment">#对于普通应用，必须设为 on,</span></span><br><span class="line">    <span class="comment">#如果用来进行下载等应用磁盘IO重负载应用，可设置为 off，</span></span><br><span class="line">    <span class="comment">#以平衡磁盘与网络I/O处理速度，降低系统的uptime.</span></span><br><span class="line">    sendfile     on;</span><br><span class="line">    <span class="comment">#tcp_nopush     on;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#连接超时时间</span></span><br><span class="line">    <span class="comment">#keepalive_timeout  0;</span></span><br><span class="line">    keepalive_timeout  <span class="number">65</span>;</span><br><span class="line">    tcp_nodelay     on;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#开启gzip压缩</span></span><br><span class="line">    gzip  on;</span><br><span class="line">    gzip_disable <span class="string">"MSIE [1-6]."</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#设定请求缓冲</span></span><br><span class="line">    client_header_buffer_size    <span class="number">128</span>k;</span><br><span class="line">    large_client_header_buffers  <span class="number">4</span> <span class="number">128</span>k;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">#设定虚拟主机配置</span></span><br><span class="line">    server &#123;</span><br><span class="line">        <span class="comment">#侦听80端口</span></span><br><span class="line">        listen    <span class="number">80</span>;</span><br><span class="line">        <span class="comment">#定义使用 www.nginx.cn访问</span></span><br><span class="line">        server_name  www.nginx.cn;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#定义服务器的默认网站根目录位置</span></span><br><span class="line">        root html;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#设定本虚拟主机的访问日志</span></span><br><span class="line">        access_log  logs/nginx.access.log  main;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#默认请求</span></span><br><span class="line">        location / &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">#定义首页索引文件的名称</span></span><br><span class="line">            index index.php index.html index.htm;   </span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 定义错误提示页面</span></span><br><span class="line">        error_page   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span> /<span class="number">50</span>x.html;</span><br><span class="line">        location = /<span class="number">50</span>x.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#静态文件，nginx自己处理</span></span><br><span class="line">        location ~ ^/(images|javascript|js|css|flash|media|<span class="keyword">static</span>)/ &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">#过期30天，静态文件不怎么更新，过期可以设大一点，</span></span><br><span class="line">            <span class="comment">#如果频繁更新，则可以设置得小一点。</span></span><br><span class="line">            expires <span class="number">30</span>d;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#PHP 脚本请求全部转发到 FastCGI处理. 使用FastCGI默认配置.</span></span><br><span class="line">        location ~ .php$ &#123;</span><br><span class="line">            fastcgi_pass <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9000</span>;</span><br><span class="line">            fastcgi_index index.php;</span><br><span class="line">            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;</span><br><span class="line">            <span class="keyword">include</span> fastcgi_params;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#禁止访问 .htxxx 文件</span></span><br><span class="line">            location ~ /.ht &#123;</span><br><span class="line">            deny all;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/nginx介绍与配置/" data-id="cjvpcrsl70003n3zzdj9iy9ru" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Word简单使用帮助" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/12/Word简单使用帮助/" class="article-date">
+  <time datetime="2019-05-12T01:50:18.000Z" itemprop="datePublished">2019-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/12/Word简单使用帮助/">Word简单使用帮助</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="适用于Microsoft-Office2016以上"><a href="#适用于Microsoft-Office2016以上" class="headerlink" title="适用于Microsoft Office2016以上"></a>适用于Microsoft Office2016以上</h2><hr>
+<ol>
+<li>自动保存</li>
+</ol>
+<ul>
+<li>文件菜单，选择“选项卡”选项，找到“保存”，修改自动保存时间，建议3分钟，时间太短容易崩溃（注：mac中在word“偏好设置”中，找到“保存”）</li>
+</ul>
+<ol start="2">
+<li>文字被吃掉</li>
+</ol>
+<ul>
+<li>insert键搞得鬼，点击一下insert键就可以了</li>
+<li>在word中，“改写”“插入”键可以切换，“改写”会被吃掉，“插入”为正常，如果屏幕上没有“插入”或“改写”键，右键点击下方空白区域，勾选上即可</li>
+</ul>
+<ol start="3">
+<li>快速访问工具栏</li>
+</ol>
+<ul>
+<li>将常用的功能右键添加到自定义快速访问工具栏，还可以放到功能区下面（注：mac中在word“偏好设置”中，找到“功能区和工具栏”）</li>
+</ul>
+<ol start="4">
+<li>全屏显示word</li>
+</ol>
+<ul>
+<li>快捷键：alt + v + u</li>
+</ul>
+<ol start="5">
+<li>去掉文字下方的波浪线/段落标记</li>
+</ol>
+<ul>
+<li>这是语法校对，如果有强迫症，那么在文件菜单，选择“选项卡”选项，将语法一栏的勾勾全部去掉就可以了</li>
+<li>段落标记的取消也在选项卡中</li>
+</ul>
+<ol start="6">
+<li>F4键的妙用（注：mac不适用…）</li>
+</ol>
+<ul>
+<li>重复上一步的操作</li>
+<li>重复文字或形状等</li>
+<li>插入表格后可以合并单元格</li>
+</ul>
+<ol start="7">
+<li>取消自动编号</li>
+</ol>
+<ul>
+<li>临时取消 出现不想要的编号按enter键</li>
+<li>永久取消 选项卡中“校对”——自动更正选项——键入时自动套用格式——取消勾选“自动编号列表”</li>
+</ul>
+<ol start="8">
+<li>移动段落</li>
+</ol>
+<ul>
+<li>法一：在段落前方双击选中整段文字，拖动光标所在的地方</li>
+<li>法二：快捷键shift + alt + 方向上下键，实现整段移动（注：mac是shift + control + 方向键）</li>
+</ul>
+<ol start="9">
+<li>空白文档中输入测试文本</li>
+</ol>
+<ul>
+<li>=rand() 输入这个按回车</li>
+</ul>
+<ol start="10">
+<li>去掉页眉横线</li>
+</ol>
+<ul>
+<li>快捷键： ctrl + shift + N / 格式选择正文</li>
+</ul>
+<ol start="11">
+<li>保存word中所有图片</li>
+</ol>
+<ul>
+<li>将文档另存为html格式</li>
+</ul>
+<ol start="12">
+<li>批注</li>
+</ol>
+<ul>
+<li>修订快捷键ctrl + shift + E，选择接受或拒绝修改的意见，还可以修改默认样式</li>
+</ul>
+<ol start="13">
+<li>删除最后的空白页</li>
+</ol>
+<ul>
+<li>法一：将光标置于空白页的段落标记处，选择段落设置，将行距设置为固定值1磅，确定</li>
+<li>法二：改变页边距</li>
+</ul>
+<ol start="14">
+<li>给汉字加拼音</li>
+</ol>
+<ul>
+<li>选中汉字，在开始选项卡中字体部分有拼音指南，拼音会在汉字上方显示</li>
+<li>要想拼音和汉字同一行显示，把汉字选中剪切一下再粘贴，在粘贴选项中选择只保留文本</li>
+</ul>
+<ol start="15">
+<li>查找替换</li>
+</ol>
+<ul>
+<li>ctrl + H查找替换，通配符替换更多需要的文本</li>
+</ul>
+<ol start="16">
+<li>更改默认字体</li>
+</ol>
+<ul>
+<li>设计选项卡中，字体选项设置</li>
+</ul>
+<ol start="17">
+<li>文档里面图片太大怎么压缩</li>
+</ol>
+<ul>
+<li>选中一张图片，图片格式选项卡，调整组里面压缩图片，取消勾选仅应用于此图片，勾选web150ppi</li>
+</ul>
+<ol start="18">
+<li>一键生成日期</li>
+</ol>
+<ul>
+<li>快捷键ctrl + end回到文章末尾，双击要输入日期的部分（即点即输），按住快捷键alt + shift + D 一键生成日期，按住快捷键alt + shift + T 一键生成时间(自动更新)</li>
+<li>ctrl + shift + F9 一键转为普通文本，ctrl + F11锁定当前日期</li>
+<li>插入选项卡 文本组“日期和时间”，可选择中文或英文时间</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/12/Word简单使用帮助/" data-id="cjvpcrsl50001n3zzrw2x1oe5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Excel简单使用帮助" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/11/Excel简单使用帮助/" class="article-date">
+  <time datetime="2019-05-11T01:17:55.000Z" itemprop="datePublished">2019-05-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/11/Excel简单使用帮助/">Excel使用技巧</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="适用于Microsoft-Office2016以上"><a href="#适用于Microsoft-Office2016以上" class="headerlink" title="适用于Microsoft Office2016以上"></a>适用于Microsoft Office2016以上</h2><hr>
+<ol>
+<li>工作表</li>
+</ol>
+<ul>
+<li>工作表右键可以设置颜色、重命名、移动复制、查看代码</li>
+</ul>
+<ol start="2">
+<li>快速选取区域或单元格</li>
+</ol>
+<ul>
+<li>快速跳转单元格 ctrl + 方向键，能够快速到达边缘单元格</li>
+<li>全选表格 ctrl + A；选中左上角单元格，按住shift键选择右下角单元格；ctrl + shift + 方向下键 + 方向右键（活学活用哈）</li>
+</ul>
+<ol start="3">
+<li>表格中行与列的设置</li>
+</ol>
+<ul>
+<li>表格智能调整合适宽度：选中列，出现黑色十字时双击</li>
+<li>增加一行或一列：ctrl + shift + +(加号)，会在选中行的上边或左边增加</li>
+<li>删除一行或一列：ctrl + -(减号)</li>
+<li>移动一行或一列：按住shift，当出现黑色十字就可以拖动啦</li>
+<li>复制一行或一列：按住ctrl + shift，当出现箭头和一个小加号，拖动一下就复制过来啦（注：mac中 按住command + option）</li>
+</ul>
+<ol start="4">
+<li>冻结窗格</li>
+</ol>
+<ul>
+<li>冻结窗格功能在视图中</li>
+<li>冻结首行和首列是基本功能</li>
+<li>冻结多行多列，例如想冻结前两行和前两列，那么选中C3单元格（即行和列交叉的第一个单元格）选中冻结窗格下的冻结拆分单元格 （注：mac中 直接选中冻结窗格即可）</li>
+</ul>
+<ol start="5">
+<li>高效填充</li>
+</ol>
+<ul>
+<li>同列填充重复/规律数据：鼠标浮动到单元格右下角，出现黑色十字，双击即可快速填充，填充后右下角有个填充的下拉按钮，选择复制单元格或填充序列等，填充日期可以根据工作日填充</li>
+<li>神级快捷键 ctrl + E(注：mac中是 control + E)文本拆分、信息提取，数据合并都ok，要使用快速填充，请输入几个想要看到的输出示例，使想要填充的列中单元格保持活动状态，再使用快捷键ctrl + E</li>
+</ul>
+<ol start="6">
+<li>设置和美化单元格</li>
+</ol>
+<ul>
+<li>字体、颜色、填充、边框、对齐方式等等</li>
+</ul>
+<ol start="7">
+<li>跨越合并单元格</li>
+</ol>
+<ul>
+<li>合并单元格在开始选项卡中</li>
+<li>重点介绍跨越合并，合并单元格是将多行多列单元格合并为一个单元格，跨越合并是将多行多列合并为多行一列单元格</li>
+</ul>
+<ol start="8">
+<li>高级的格式刷</li>
+</ol>
+<ul>
+<li>格式刷在开始选项卡中，选中要复制格式的单元格，再选中格式刷，再选中要应用的单元格，完成一次格式刷功能，还可以双击格式刷多次使用该格式，按ESC键取消格式刷</li>
+</ul>
+<ol start="9">
+<li>数字格式设置</li>
+</ol>
+<ul>
+<li>右键设置单元格格式，或者在开始选项卡中快速设置</li>
+<li>excel中时间是以1900年1月1日为起点的，如果单元格设置成日期格式，则数字则代表相应的日期，例如5.5代表1990年1月5日12:00:00（0.5天为12点整）</li>
+<li>快速设置货币格式ctrl + shift + 4(注：mac中此快捷键是截图)</li>
+</ul>
+<ol start="10">
+<li>文本格式设置</li>
+</ol>
+<ul>
+<li>excel对于12位以上（包括12位）的数字会自动采用科学计数法计数，例如身份证则设置文本格式</li>
+</ul>
+<ol start="11">
+<li>自定义文本隐藏数据</li>
+</ol>
+<ul>
+<li>第一步：设置单元格格式 数字选项卡勾选为自定义，输入英文状态下的3个分号（;;;），此时文本消失但不是真的隐藏</li>
+<li>第二步：设置单元格格式 保护选项卡下勾选隐藏，回到审阅选项卡中选择保护工作表</li>
+</ul>
+<ol start="12">
+<li>打印的一些操作</li>
+</ol>
+<ul>
+<li>页面布局选项卡 打印快捷键ctrl + P</li>
+<li>打印每一页都有标题：打印标题设置，打印区域选择全选，标题选首行，预览可以看到</li>
+<li>打印超出区域：将宽度设置为1页，会将宽度自动缩放</li>
+<li>打印指定区域：先选中要打印的区域，打印时选择打印选中区域即可</li>
+</ul>
+<ol start="13">
+<li>让文本数据进行分列</li>
+</ol>
+<ul>
+<li>数据选项卡中选择 分列，通过分隔符号等进行分列</li>
+</ul>
+<ol start="14">
+<li>名称框快速定位（名称框和编辑栏所在同一行）</li>
+</ol>
+<ul>
+<li>名称框显示单元格所在列行，可直接在名称框中输入要定位的单元格列行号进行定位，还可以为但单元格名称框重命名，通过名称框下拉菜单快速选择</li>
+</ul>
+<ol start="15">
+<li>精确的查找工具</li>
+</ol>
+<ul>
+<li>快捷键ctrl + F</li>
+<li>勾选单元格匹配，全字匹配</li>
+<li>按照格式查找</li>
+</ul>
+<ol start="16">
+<li>好用的定位条件<br>复制可见单元格</li>
+</ol>
+<ul>
+<li>定位功能快捷键 F5 / ctrl + G</li>
+<li>法一：简单的复制会将中间隐藏的单元格一并复制，调出定位条件，选择仅可见单元格，再选择复制就不会包括隐藏的单元格啦</li>
+<li>法二：Alt + ; 和上面同样的效果（注：mac不支持该快捷键）<br>删除对象（图形形状等统称为对象）</li>
+<li>定位功能找到所有对象，删除</li>
+</ul>
+<ol start="17">
+<li>工资条的制作</li>
+</ol>
+<ul>
+<li>给每一行加上同一个标题</li>
+<li>具体做法：先给每一行加上递增排序，再复制一份序号在最后一行的单元格，根据序号排序，就会每隔一行都会有一个空行，再利用定位条件，选中所有的空行，复制标题粘贴到空行就OK了</li>
+</ul>
+<ol start="18">
+<li>一键合并重复项目</li>
+</ol>
+<ul>
+<li>法一：数据选项卡中选择删除重复项，然后根据唯一值删除重复值</li>
+<li>法二：通过筛选过滤掉重复值，然后根据定位功能复制表格</li>
+</ul>
+<ol start="19">
+<li>分类汇总</li>
+</ol>
+<ul>
+<li>数据选项卡下面的分类汇总，根据某一类分类汇总 </li>
+<li>快捷键alt + = 快速计算行列总和</li>
+</ul>
+<ol start="20">
+<li>行列呼唤</li>
+</ol>
+<ul>
+<li>法一：复制原始表格，点中目标第一个单元格，右键“选择性粘帖”，勾选“转置”；</li>
+<li>法二：原始2×14，选中目标14×2。输入“= TRANSPOSE（原始表格区域）”，按“ ctrl+ shift+ enter”</li>
+</ul>
+<ol start="21">
+<li>数据验证</li>
+</ol>
+<ul>
+<li>下拉菜单制作，数据选项卡选择数据验证，来源用英文逗号隔开</li>
+<li>数字区间范围</li>
+<li>文本长度控制（手机号位数防止输错）</li>
+</ul>
+<ol start="22">
+<li>超链接</li>
+</ol>
+<ul>
+<li>多工作表中的切换，插入选项卡选择链接，在本文档中查找，选择工作表</li>
+</ul>
+<ol start="23">
+<li>数据直观快速的显示</li>
+</ol>
+<ul>
+<li>开始选项卡“条件格式”</li>
+</ul>
+<ol start="24">
+<li>数据限制访问区域</li>
+</ol>
+<ul>
+<li>审阅选项卡中允许编辑区域 + 保护工作表 ，两重密码保护，先设置允许的编辑区域再选择保护工作表</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/11/Excel简单使用帮助/" data-id="cjvpcrsl60002n3zza3wrzglk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-心情" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/09/心情/" class="article-date">
+  <time datetime="2019-05-09T15:08:01.000Z" itemprop="datePublished">2019-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/09/心情/">心情</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>很容易喜欢上别人，所以别伤心。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/09/心情/" data-id="cjvpcrsl80005n3zz8ry8mrhy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-操作系统的常用功能" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/08/操作系统的常用功能/" class="article-date">
@@ -86,14 +522,18 @@
       
         <h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><h2 id="Mac-OS"><a href="#Mac-OS" class="headerlink" title="Mac OS"></a>Mac OS</h2><h5 id="给初用的mac的你们"><a href="#给初用的mac的你们" class="headerlink" title="给初用的mac的你们"></a>给初用的mac的你们</h5><hr>
 <ol>
-<li>显示隐藏的文件夹<br>法一： Command+Shift+.  可以显示隐藏文件、文件夹，再按一次，恢复隐藏<br>法二： 终端中输入：defaults write com.apple.finder AppleShowAllFiles FALSE killall Finder      // FALSE是隐藏，TRUE是显示</li>
-<li>快捷键<br>聚焦搜索： command+space(空格)</li>
+<li>显示隐藏的文件夹<br>法一： command + shift + .  可以显示隐藏文件、文件夹，再按一次，恢复隐藏<br>法二： 终端中输入：defaults write com.apple.finder AppleShowAllFiles FALSE killall Finder      // FALSE是隐藏，TRUE是显示</li>
+<li>快捷键<br>聚焦搜索： command + space(空格)<br>截图： command + shift + 4<br>切换桌面：control + 方向左右键 / 面板上三指左右滑动<br>当前任务：control + 方向上键<br>退出窗口：command + Q<br>关闭窗口：command + W<br>最小化窗口：command + M<br>隐藏窗口：command + H，通过command + Tab呼出<br>选中当前行：command + L<br>光标快速定位到行首或行尾 command + 方向键<br>输入法大写：按住shift键选择字母 / 长按中/英切换，指示灯亮起即为大写锁定，再按一下取消大写锁定 </li>
+<li>打开sh文件</li>
 </ol>
-<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2>
+<ul>
+<li>sudo sh startup.sh<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2></li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/08/操作系统的常用功能/" data-id="cjvfbuxrm000047zz9fytwnlf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/08/操作系统的常用功能/" data-id="cjvpcrsl90006n3zz1jmp7p4m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -130,7 +570,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/04/hi/" data-id="cjvfbuxs0000247zzyil52nti" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/04/hi/" data-id="cjvpcrsl80004n3zzd3xm86wv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -175,7 +615,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/04/hello-world/" data-id="cjvfbuxrp000147zzpyppecbj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/04/hello-world/" data-id="cjvpcrsl10000n3zzl9lg17q9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -216,15 +656,23 @@
       <ul>
         
           <li>
+            <a href="/2019/05/15/nginx介绍与配置/">nginx介绍与配置</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/12/Word简单使用帮助/">Word简单使用帮助</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/11/Excel简单使用帮助/">Excel使用技巧</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/09/心情/">心情</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/08/操作系统的常用功能/">操作系统的常用功能</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/04/hi/">hi</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/04/hello-world/">Hello World</a>
           </li>
         
       </ul>
