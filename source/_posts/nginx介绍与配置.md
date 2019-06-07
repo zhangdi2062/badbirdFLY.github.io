@@ -8,7 +8,11 @@ tags:
 Nginx同Apache一样都是一种WEB服务器。基于REST架构风格，以统一资源描述符(Uniform Resources Identifier)URI或者统一资源定位符(Uniform Resources Locator)URL作为沟通依据，通过HTTP协议提供各种网络服务。
 Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器；同时也是一个IMAP、POP3、SMTP代理服务器；Nginx可以作为一个HTTP服务器进行网站的发布处理，另外Nginx可以作为反向代理进行负载均衡的实现。
 
-## nginx默认路径
+---  
+
+<!--more-->
+
+## nginx默认路径    
 nginx.conf /usr/local/etc/nginx
 放置页面所在路径 /usr/local/var/www
 ## nignx  mac安装及命令

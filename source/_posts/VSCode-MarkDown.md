@@ -1,9 +1,15 @@
 ---
 title: VSCode MarkDown
 date: 2019-05-24 22:58:08
-tags: - MarkDown
+tags: 
+- markdown目录
 ---
 
+vscode中实现markdown自动生成目录
+
+---
+
+<!--more-->
 
 ## VSCode安装markdown扩展生成目录
 
