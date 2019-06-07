@@ -77,7 +77,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0">
 
 
 
@@ -89,10 +89,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="nginx介绍与配置">
 <meta property="og:url" content="https://badbirdfly.github.io/2019/05/15/nginx介绍与配置/index.html">
-<meta property="og:site_name" content="⬆ 燃！">
+<meta property="og:site_name" content="ZhangDi的博客">
 <meta property="og:description" content="介绍Nginx同Apache一样都是一种WEB服务器。基于REST架构风格，以统一资源描述符(Uniform Resources Identifier)URI或者统一资源定位符(Uniform Resources Locator)URL作为沟通依据，通过HTTP协议提供各种网络服务。Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器；同时也是一个IMAP、POP3、SMTP代理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-06T13:52:37.495Z">
+<meta property="og:updated_time" content="2019-06-07T05:13:14.371Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx介绍与配置">
 <meta name="twitter:description" content="介绍Nginx同Apache一样都是一种WEB服务器。基于REST架构风格，以统一资源描述符(Uniform Resources Identifier)URI或者统一资源定位符(Uniform Resources Locator)URL作为沟通依据，通过HTTP协议提供各种网络服务。Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器；同时也是一个IMAP、POP3、SMTP代理">
@@ -129,7 +129,7 @@
 
 
 
-  <title> nginx介绍与配置 | ⬆ 燃！ </title>
+  <title> nginx介绍与配置 | ZhangDi的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -160,7 +160,7 @@
   <div class="custom-logo-site-title">
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">⬆ 燃！</span>
+      <span class="site-title">ZhangDi的博客</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -198,6 +198,16 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
           </a>
         </li>
       
@@ -245,13 +255,13 @@
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Zhang Di">
     <meta itemprop="description" content>
-    <meta itemprop="image" content="/images/avatar.gif">
+    <meta itemprop="image" content="/images/avatar.png">
   </span>
 
   <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="⬆ 燃！">
+    <meta itemprop="name" content="ZhangDi的博客">
     <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="⬆ 燃！" src>
+      <img style="display:none;" itemprop="url image" alt="ZhangDi的博客" src>
     </span>
   </span>
 
@@ -285,8 +295,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2019-06-06T21:52:37+08:00">
-              2019-06-06
+            <time title="Post modified" itemprop="dateModified" datetime="2019-06-07T13:13:14+08:00">
+              2019-06-07
             </time>
             
           </span>
@@ -303,6 +313,11 @@
           
 
           
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+          
           
           
 
@@ -318,6 +333,9 @@
 
       
         <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Nginx同Apache一样都是一种WEB服务器。基于REST架构风格，以统一资源描述符(Uniform Resources Identifier)URI或者统一资源定位符(Uniform Resources Locator)URL作为沟通依据，通过HTTP协议提供各种网络服务。<br>Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器；同时也是一个IMAP、POP3、SMTP代理服务器；Nginx可以作为一个HTTP服务器进行网站的发布处理，另外Nginx可以作为反向代理进行负载均衡的实现。</p>
+<hr>
+<a id="more"></a>
+
 <h2 id="nginx默认路径"><a href="#nginx默认路径" class="headerlink" title="nginx默认路径"></a>nginx默认路径</h2><p>nginx.conf /usr/local/etc/nginx<br>放置页面所在路径 /usr/local/var/www</p>
 <h2 id="nignx-mac安装及命令"><a href="#nignx-mac安装及命令" class="headerlink" title="nignx  mac安装及命令"></a>nignx  mac安装及命令</h2><p>安装brew<br>执行以下命令即可安装brew最新版本（<a href="https://github.com/Homebrew/install）" target="_blank" rel="noopener">https://github.com/Homebrew/install）</a><br><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code><br>卸载brew<br><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)&quot;</code></p>
 <p>安装nginx<br><code>sudo brew install nginx</code></p>
@@ -423,31 +441,31 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Zhang Di">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Zhang Di">
           <p class="site-author-name" itemprop="name">Zhang Di</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           
             <div class="site-state-item site-state-categories">
-              
+              <a href="/categories">
                 <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">分类</span>
-              
+              </a>
             </div>
           
 
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -524,6 +542,22 @@
 
 
         
+
+<div class="busuanzi-count">
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
 
         
       </div>
