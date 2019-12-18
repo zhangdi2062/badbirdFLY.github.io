@@ -1,0 +1,739 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="* 快速入门 * 创建场景 * 模板创建        * 空白场景                   * 选择组件     * 样式调整 * 调整画布的样式        * 调整组件的样式                   * 动画编排     * 对接数据     * 这样一个简单的大屏就可以展示了！          快速入门 五步法快速构建大屏    创建场景 模板创建 ChartB">
+<meta name="keywords" content="前端,学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大屏搭用户手册">
+<meta property="og:url" content="https://badbirdfly.github.io/2019/09/23/大屏搭用户手册/index.html">
+<meta property="og:site_name" content="ZhangDi的博客">
+<meta property="og:description" content="* 快速入门 * 创建场景 * 模板创建        * 空白场景                   * 选择组件     * 样式调整 * 调整画布的样式        * 调整组件的样式                   * 动画编排     * 对接数据     * 这样一个简单的大屏就可以展示了！          快速入门 五步法快速构建大屏    创建场景 模板创建 ChartB">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://badbirdfly.github.io/2019/09/assets/images/wp/wp2.png">
+<meta property="og:image" content="https://badbirdfly.github.io/2019/09/assets/images/start/template.jpg">
+<meta property="og:image" content="https://badbirdfly.github.io/2019/09/assets/images/start/new_scene.gif">
+<meta property="og:image" content="https://badbirdfly.github.io/2019/09/assets/images/start/create_scene.gif">
+<meta property="og:image" content="https://badbirdfly.github.io/2019/09/assets/images/start/layout_style.gif">
+<meta property="og:image" content="https://badbirdfly.github.io/2019/09/assets/images/start/scene_revise.gif">
+<meta property="og:image" content="https://badbirdfly.github.io/2019/09/assets/images/start/text_style.gif">
+<meta property="og:image" content="https://badbirdfly.github.io/2019/09/assets/images/start/pie1_style.gif">
+<meta property="og:image" content="https://badbirdfly.github.io/2019/09/assets/images/start/pie2_style.gif">
+<meta property="og:image" content="https://badbirdfly.github.io/2019/09/assets/images/start/radar_style.gif">
+<meta property="og:image" content="https://badbirdfly.github.io/2019/09/assets/images/start/text2_style.gif">
+<meta property="og:image" content="https://badbirdfly.github.io/2019/09/assets/images/start/animation01.gif">
+<meta property="og:image" content="https://badbirdfly.github.io/2019/09/assets/images/start/animation02.gif">
+<meta property="og:image" content="https://badbirdfly.github.io/2019/09/assets/images/start/db_data.jpg">
+<meta property="og:image" content="https://badbirdfly.github.io/2019/09/assets/images/start/db.gif">
+<meta property="og:image" content="https://badbirdfly.github.io/2019/09/assets/images/start/rest_data.jpg">
+<meta property="og:image" content="https://badbirdfly.github.io/2019/09/assets/images/start/rest.gif">
+<meta property="og:updated_time" content="2019-09-23T02:05:06.918Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="大屏搭用户手册">
+<meta name="twitter:description" content="* 快速入门 * 创建场景 * 模板创建        * 空白场景                   * 选择组件     * 样式调整 * 调整画布的样式        * 调整组件的样式                   * 动画编排     * 对接数据     * 这样一个简单的大屏就可以展示了！          快速入门 五步法快速构建大屏    创建场景 模板创建 ChartB">
+<meta name="twitter:image" content="https://badbirdfly.github.io/2019/09/assets/images/wp/wp2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://badbirdfly.github.io/2019/09/23/大屏搭用户手册/">
+
+
+
+
+
+  <title> 大屏搭用户手册 | ZhangDi的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">ZhangDi的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">学习！</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://badbirdfly.github.io/2019/09/23/大屏搭用户手册/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Zhang Di">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="ZhangDi的博客">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="ZhangDi的博客" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                大屏搭用户手册
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-23T10:03:58+08:00">
+              2019-09-23
+            </time>
+
+            &nbsp;|&nbsp;
+
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-check-o"></i>
+            </span>
+            <time title="Post modified" itemprop="dateModified" datetime="2019-09-23T10:05:06+08:00">
+              2019-09-23
+            </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+          
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <!-- TOC -->
+
+<ul>
+<li><a href="#快速入门">快速入门</a><ul>
+<li><a href="#创建场景">创建场景</a><ul>
+<li><a href="#模板创建">模板创建</a></li>
+<li><a href="#空白场景">空白场景</a></li>
+</ul>
+</li>
+<li><a href="#选择组件">选择组件</a></li>
+<li><a href="#样式调整">样式调整</a><ul>
+<li><a href="#调整画布的样式">调整画布的样式</a></li>
+<li><a href="#调整组件的样式">调整组件的样式</a></li>
+</ul>
+</li>
+<li><a href="#动画编排">动画编排</a></li>
+<li><a href="#对接数据">对接数据</a></li>
+<li><a href="#这样一个简单的大屏就可以展示了">这样一个简单的大屏就可以展示了！</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+
+<h1 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h1><blockquote>
+<p>五步法快速构建大屏</p>
+</blockquote>
+<p><img src="../../assets/images/wp/wp2.png" alt></p>
+<h2 id="创建场景"><a href="#创建场景" class="headerlink" title="创建场景"></a>创建场景</h2><h3 id="模板创建"><a href="#模板创建" class="headerlink" title="模板创建"></a>模板创建</h3><p>ChartBuilder提供一些基本的场景模板，满足一些基本的业务需要</p>
+<p>选择模板创建场景</p>
+<p><img src="../../assets/images/start/template.jpg" alt></p>
+<h3 id="空白场景"><a href="#空白场景" class="headerlink" title="空白场景"></a>空白场景</h3><p>自行DIY一个场景</p>
+<p><img src="../../assets/images/start/new_scene.gif" alt></p>
+<h2 id="选择组件"><a href="#选择组件" class="headerlink" title="选择组件"></a>选择组件</h2><p>在场景中选择合适的图形组件来表达我们的业务指标数据</p>
+<p>例：搭建一个简单的场景</p>
+<p><img src="../../assets/images/start/create_scene.gif" alt></p>
+<h2 id="样式调整"><a href="#样式调整" class="headerlink" title="样式调整"></a>样式调整</h2><h3 id="调整画布的样式"><a href="#调整画布的样式" class="headerlink" title="调整画布的样式"></a>调整画布的样式</h3><p><img src="../../assets/images/start/layout_style.gif" alt></p>
+<h3 id="调整组件的样式"><a href="#调整组件的样式" class="headerlink" title="调整组件的样式"></a>调整组件的样式</h3><p>整体调整，增加图层作为背景</p>
+<p><img src="../../assets/images/start/scene_revise.gif" alt></p>
+<p>文本调整</p>
+<p><img src="../../assets/images/start/text_style.gif" alt></p>
+<p>组件样式调整</p>
+<p>依次调整第一个环状图图例是否显示、标签是否显示、显示位置、字体大小、显示格式、环半径</p>
+<p><img src="../../assets/images/start/pie1_style.gif" alt></p>
+<p> 调整第二个环状图色系，同样调整第二个环状图的样式</p>
+<p><img src="../../assets/images/start/pie2_style.gif" alt></p>
+<p>依次调整雷达图视觉线颜色、标签颜色、图形样式</p>
+<p><img src="../../assets/images/start/radar_style.gif" alt></p>
+<p>文本标签居左对齐</p>
+<p><img src="../../assets/images/start/text2_style.gif" alt></p>
+<h2 id="动画编排"><a href="#动画编排" class="headerlink" title="动画编排"></a>动画编排</h2><p>系统提供可视化的动画编排中心，在可视化的页面上完成轮播动画，数据驱动动画等功能</p>
+<p>编排动画,最后将动画编排组件隐藏</p>
+<p><img src="../../assets/images/start/animation01.gif" alt></p>
+<p>动画效果(Enter/PageUp/PageDown 触发点击事件)</p>
+<p><img src="../../assets/images/start/animation02.gif" alt></p>
+<h2 id="对接数据"><a href="#对接数据" class="headerlink" title="对接数据"></a>对接数据</h2><p>接数据分为线上和线下，线上无需接数，编辑完场景后，下载离线包，到生产环境中运行接入生产数据即可</p>
+<ul>
+<li><p>选择场景下载离线版安装包</p>
+</li>
+<li><p>解压安装包至服务器，进入udatav-offline/bin下启动服务（Windows/start.bat Linux/start.sh）</p>
+</li>
+<li><p>页面访问http://服务器IP:8000</p>
+</li>
+<li><p>对接数据</p>
+<p>数据库对接（原始数据如下）</p>
+</li>
+</ul>
+<p><img src="../../assets/images/start/db_data.jpg" alt></p>
+<p><img src="../../assets/images/start/db.gif" alt></p>
+<p>restApi对接(原始数据如下) </p>
+<p><img src="../../assets/images/start/rest_data.jpg" alt></p>
+<p><img src="../../assets/images/start/rest.gif" alt></p>
+<h2 id="这样一个简单的大屏就可以展示了！"><a href="#这样一个简单的大屏就可以展示了！" class="headerlink" title="这样一个简单的大屏就可以展示了！"></a>这样一个简单的大屏就可以展示了！</h2><p><a href="https://dapingda.tarsier.uinnova.com/app/viewer?id=5b14fff3e3149d3743ac2119" target="_blank" rel="noopener">点击这里打开实例场景</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/28/hello-world/" rel="next" title="快速使用hexo">
+                <i class="fa fa-chevron-left"></i> 快速使用hexo
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/02/svg画饼图/" rel="prev" title="svg画饼图">
+                svg画饼图 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Zhang Di">
+          <p class="site-author-name" itemprop="name">Zhang Di</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#快速入门"><span class="nav-number">1.</span> <span class="nav-text">快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建场景"><span class="nav-number">1.1.</span> <span class="nav-text">创建场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模板创建"><span class="nav-number">1.1.1.</span> <span class="nav-text">模板创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空白场景"><span class="nav-number">1.1.2.</span> <span class="nav-text">空白场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择组件"><span class="nav-number">1.2.</span> <span class="nav-text">选择组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样式调整"><span class="nav-number">1.3.</span> <span class="nav-text">样式调整</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#调整画布的样式"><span class="nav-number">1.3.1.</span> <span class="nav-text">调整画布的样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调整组件的样式"><span class="nav-number">1.3.2.</span> <span class="nav-text">调整组件的样式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动画编排"><span class="nav-number">1.4.</span> <span class="nav-text">动画编排</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对接数据"><span class="nav-number">1.5.</span> <span class="nav-text">对接数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这样一个简单的大屏就可以展示了！"><span class="nav-number">1.6.</span> <span class="nav-text">这样一个简单的大屏就可以展示了！</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang Di</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+
+</body>
+</html>

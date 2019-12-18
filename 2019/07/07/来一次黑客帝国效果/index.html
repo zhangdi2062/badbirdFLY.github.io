@@ -87,15 +87,15 @@
 <meta name="description" content="本篇介绍的是类似黑客帝国满屏的二进制编码效果，同理下雨和流星雨也可以这么耍  先来上效果：    我们仔细观察一下，这是由一张图片随机重复多次，并且每张图不断向下改变位置而产生动画的效果，那么我们来一步步拆解一下  首先学习一个知识点：（可能大家早就知道这个，我不知道，就当知识点写了哈）  设置多张背景图的写法：background: url(xx.png),url(xx.png)用逗号分隔开">
 <meta name="keywords" content="js,动画">
 <meta property="og:type" content="article">
-<meta property="og:title" content="来一次黑客帝国效果">
+<meta property="og:title" content="纯css实现黑客帝国效果">
 <meta property="og:url" content="https://badbirdfly.github.io/2019/07/07/来一次黑客帝国效果/index.html">
 <meta property="og:site_name" content="ZhangDi的博客">
 <meta property="og:description" content="本篇介绍的是类似黑客帝国满屏的二进制编码效果，同理下雨和流星雨也可以这么耍  先来上效果：    我们仔细观察一下，这是由一张图片随机重复多次，并且每张图不断向下改变位置而产生动画的效果，那么我们来一步步拆解一下  首先学习一个知识点：（可能大家早就知道这个，我不知道，就当知识点写了哈）  设置多张背景图的写法：background: url(xx.png),url(xx.png)用逗号分隔开">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://cdn.sinaimg.cn.52ecy.cn/large/005BYqpgly1g4u1lo97ybg30qi078tj9.jpg">
-<meta property="og:updated_time" content="2019-07-28T13:52:30.643Z">
+<meta property="og:updated_time" content="2019-07-28T15:00:46.610Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="来一次黑客帝国效果">
+<meta name="twitter:title" content="纯css实现黑客帝国效果">
 <meta name="twitter:description" content="本篇介绍的是类似黑客帝国满屏的二进制编码效果，同理下雨和流星雨也可以这么耍  先来上效果：    我们仔细观察一下，这是由一张图片随机重复多次，并且每张图不断向下改变位置而产生动画的效果，那么我们来一步步拆解一下  首先学习一个知识点：（可能大家早就知道这个，我不知道，就当知识点写了哈）  设置多张背景图的写法：background: url(xx.png),url(xx.png)用逗号分隔开">
 <meta name="twitter:image" content="https://cdn.sinaimg.cn.52ecy.cn/large/005BYqpgly1g4u1lo97ybg30qi078tj9.jpg">
 
@@ -131,7 +131,7 @@
 
 
 
-  <title> 来一次黑客帝国效果 | ZhangDi的博客 </title>
+  <title> 纯css实现黑客帝国效果 | ZhangDi的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -276,7 +276,7 @@
             
             
               
-                来一次黑客帝国效果
+                纯css实现黑客帝国效果
               
             
           </h1>
@@ -297,7 +297,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2019-07-28T21:52:30+08:00">
+            <time title="Post modified" itemprop="dateModified" datetime="2019-07-28T23:00:46+08:00">
               2019-07-28
             </time>
             
@@ -342,16 +342,19 @@
 <p>我们仔细观察一下，这是由一张图片随机重复多次，并且每张图不断向下改变位置而产生动画的效果，那么我们来一步步拆解一下</p>
 <p>首先学习一个知识点：（可能大家早就知道这个，我不知道，就当知识点写了哈）</p>
 <p>设置多张背景图的写法：<code>background: url(xx.png),url(xx.png)</code>用逗号分隔开</p>
-<p>原料：</p>
-<p>一个合适大小的div</p>
+<h3 id="原料："><a href="#原料：" class="headerlink" title="原料："></a>原料：</h3><p>一个合适大小的div</p>
 <p>一张如下图所示的图片，充满了010101010的科技感图片</p>
-<p>过程：</p>
-<ol>
+<h3 id="过程："><a href="#过程：" class="headerlink" title="过程："></a>过程：</h3><ol>
 <li>生成一张随机位置的该图</li>
 </ol>
-<p>其实不能完全叫随机，因为初始时y轴的坐标固定在div上方，只随机生成x轴坐标即可</p>
+<p>其实不算完全随机，因为初始时y轴的坐标可以固定在div上方，只随机生成x轴坐标即可</p>
+<p>代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomBgs</span>(<span class="params">bgArr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> num = <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random() * <span class="number">8</span> + <span class="number">1</span>, <span class="number">10</span>) ;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">while</span> (num) &#123;</span><br><span class="line">        <span class="keyword">let</span> posx = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*(<span class="number">1160</span> + <span class="number">1</span>));</span><br><span class="line">        <span class="keyword">let</span> repeated = bgArr.some(<span class="function"><span class="params">item</span> =&gt;</span> item.posx === posx);</span><br><span class="line">        <span class="keyword">while</span> (repeated) &#123;</span><br><span class="line">            posx = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*(<span class="number">1160</span> + <span class="number">1</span>));</span><br><span class="line">            repeated = bgArr.some(<span class="function"><span class="params">item</span> =&gt;</span> item.posx === posx);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">const</span> posy = -HEIGHT;</span><br><span class="line">        <span class="keyword">const</span> duration = <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random()*<span class="number">3001</span>+<span class="number">2000</span>,<span class="number">10</span>);</span><br><span class="line">        <span class="keyword">const</span> startTime = <span class="number">0</span>;</span><br><span class="line">        bgArr.push(&#123;</span><br><span class="line">            posx, posy, duration, startTime</span><br><span class="line">            &#125;);</span><br><span class="line">        num--</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">return</span> bgArr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ol start="2">
-<li></li>
+<li><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">movingNumsBg($dom, <span class="number">800</span>)</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">movingNumsBg</span>(<span class="params">dom, interval</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> bgs = randomBgs([]);</span><br><span class="line">    <span class="keyword">let</span> startTime = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Linear</span>(<span class="params">b, c, d, t</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> c * t / d + b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params">timestamp</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!startTime) &#123;</span><br><span class="line">            startTime = timestamp</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">const</span> progress = timestamp - startTime;</span><br><span class="line">        <span class="keyword">if</span> (progress &gt; interval) &#123;</span><br><span class="line">            startTime = timestamp</span><br><span class="line">            randomBgs(bgs);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">const</span> positions = bgs.map(<span class="function">(<span class="params">bg</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(!bg.startTime) &#123;</span><br><span class="line">                bg.startTime = timestamp;</span><br><span class="line">            &#125;</span><br><span class="line">            bg.posy = <span class="built_in">parseInt</span>(Linear(-HEIGHT, <span class="number">510</span>, bg.duration, timestamp - bg.startTime));</span><br><span class="line">            <span class="keyword">return</span> <span class="string">`url(/chart/udatav/getimagebyid?id=39d72daef67c45809c0fec948f8826a7.png) <span class="subst">$&#123;bg.posx&#125;</span>px <span class="subst">$&#123;bg.posy&#125;</span>px no-repeat`</span>;</span><br><span class="line">        &#125;).join(<span class="string">','</span>);</span><br><span class="line">        dom.css(<span class="string">'background'</span>, positions);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; bgs.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (bgs[i].posy &gt;= HEIGHT) &#123;</span><br><span class="line">                bgs.splice(i, <span class="number">1</span>);</span><br><span class="line">                i = i - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        requestAnimationFrame(step);</span><br><span class="line">    &#125;</span><br><span class="line">    requestAnimationFrame(step);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
 </ol>
 
       
@@ -446,8 +449,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Zhang Di">
           <p class="site-author-name" itemprop="name">Zhang Di</p>
@@ -456,7 +468,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -473,7 +485,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -498,6 +510,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#原料："><span class="nav-number">1.</span> <span class="nav-text">原料：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过程："><span class="nav-number">2.</span> <span class="nav-text">过程：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
