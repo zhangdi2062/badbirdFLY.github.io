@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="CSS3关键字：currentColor // 当前文字的颜色 例如border会默认取得当前元素的color的颜色值或者继承父级color的色值">
+<meta name="description" content="颜色继承 CSS3关键字：currentColor // 当前文字的颜色 例如border会默认取得当前元素的color的颜色值或者继承父级color的色值  兄弟选择器～ + 注意两者都表示选择元素之后的兄弟节点  ~表示元素后面所有的兄弟节点，多个  +表示元素后一个相邻的兄弟节点，一个  目前css还没有可选择前一个兄弟节点的方法，可以通过父元素选择，或js的previousElementS">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS查漏补缺">
 <meta property="og:url" content="https://badbirdfly.github.io/2019/12/01/CSS查漏补缺/index.html">
 <meta property="og:site_name" content="ZhangDi的博客">
-<meta property="og:description" content="CSS3关键字：currentColor // 当前文字的颜色 例如border会默认取得当前元素的color的颜色值或者继承父级color的色值">
+<meta property="og:description" content="颜色继承 CSS3关键字：currentColor // 当前文字的颜色 例如border会默认取得当前元素的color的颜色值或者继承父级color的色值  兄弟选择器～ + 注意两者都表示选择元素之后的兄弟节点  ~表示元素后面所有的兄弟节点，多个  +表示元素后一个相邻的兄弟节点，一个  目前css还没有可选择前一个兄弟节点的方法，可以通过父元素选择，或js的previousElementS">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-18T15:23:24.848Z">
+<meta property="og:updated_time" content="2020-03-29T07:16:04.930Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS查漏补缺">
-<meta name="twitter:description" content="CSS3关键字：currentColor // 当前文字的颜色 例如border会默认取得当前元素的color的颜色值或者继承父级color的色值">
+<meta name="twitter:description" content="颜色继承 CSS3关键字：currentColor // 当前文字的颜色 例如border会默认取得当前元素的color的颜色值或者继承父级color的色值  兄弟选择器～ + 注意两者都表示选择元素之后的兄弟节点  ~表示元素后面所有的兄弟节点，多个  +表示元素后一个相邻的兄弟节点，一个  目前css还没有可选择前一个兄弟节点的方法，可以通过父元素选择，或js的previousElementS">
 
 
 
@@ -295,8 +295,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2019-12-18T23:23:24+08:00">
-              2019-12-18
+            <time title="Post modified" itemprop="dateModified" datetime="2020-03-29T15:16:04+08:00">
+              2020-03-29
             </time>
             
           </span>
@@ -332,7 +332,11 @@
       
 
       
-        <p>CSS3关键字：currentColor  // 当前文字的颜色<br>例如border会默认取得当前元素的color的颜色值或者继承父级color的色值</p>
+        <h2 id="颜色继承"><a href="#颜色继承" class="headerlink" title="颜色继承"></a>颜色继承</h2><p>CSS3关键字：currentColor  // 当前文字的颜色<br>例如border会默认取得当前元素的color的颜色值或者继承父级color的色值</p>
+<h2 id="兄弟选择器～"><a href="#兄弟选择器～" class="headerlink" title="兄弟选择器～ +"></a>兄弟选择器～ +</h2><p>注意两者都表示选择元素之后的兄弟节点</p>
+<p><code>~</code>表示元素后面所有的兄弟节点，多个</p>
+<p><code>+</code>表示元素后一个相邻的兄弟节点，一个</p>
+<p>目前css还没有可选择前一个兄弟节点的方法，可以通过父元素选择，或js的previousElementSibling</p>
 
       
     </div>
@@ -424,8 +428,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Zhang Di">
           <p class="site-author-name" itemprop="name">Zhang Di</p>
@@ -434,7 +447,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">27</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -451,7 +464,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -477,6 +490,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色继承"><span class="nav-number">1.</span> <span class="nav-text">颜色继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兄弟选择器～"><span class="nav-number">2.</span> <span class="nav-text">兄弟选择器～ +</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
     </div>
   </aside>
@@ -491,7 +520,7 @@
         <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

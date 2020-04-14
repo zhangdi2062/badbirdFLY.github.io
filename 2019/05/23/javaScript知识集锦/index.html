@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="小生不才，正处在初级学习阶段，如有不正确之处请多指教。     防抖 数组  * ##">
+<meta name="description" content="防抖 数组 JSON.parse &amp; JSON.stringify 前言 JSON.stringify的基本用法是将对象转成json字符串进行传递，即JSON.stringify(data) 需要注意的是:   1. 转换的值是数组时：下标为undefined和function还有Symbol(&apos;&apos;)都会转换成null     例如：          1               JSON.s">
 <meta name="keywords" content="前端,js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javaScript知识集锦">
 <meta property="og:url" content="https://badbirdfly.github.io/2019/05/23/javaScript知识集锦/index.html">
 <meta property="og:site_name" content="ZhangDi的博客">
-<meta property="og:description" content="小生不才，正处在初级学习阶段，如有不正确之处请多指教。     防抖 数组  * ##">
+<meta property="og:description" content="防抖 数组 JSON.parse &amp; JSON.stringify 前言 JSON.stringify的基本用法是将对象转成json字符串进行传递，即JSON.stringify(data) 需要注意的是:   1. 转换的值是数组时：下标为undefined和function还有Symbol(&apos;&apos;)都会转换成null     例如：          1               JSON.s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-18T15:23:24.850Z">
+<meta property="og:updated_time" content="2020-03-29T07:20:00.581Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javaScript知识集锦">
-<meta name="twitter:description" content="小生不才，正处在初级学习阶段，如有不正确之处请多指教。     防抖 数组  * ##">
+<meta name="twitter:description" content="防抖 数组 JSON.parse &amp; JSON.stringify 前言 JSON.stringify的基本用法是将对象转成json字符串进行传递，即JSON.stringify(data) 需要注意的是:   1. 转换的值是数组时：下标为undefined和function还有Symbol(&apos;&apos;)都会转换成null     例如：          1               JSON.s">
 
 
 
@@ -295,8 +295,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2019-12-18T23:23:24+08:00">
-              2019-12-18
+            <time title="Post modified" itemprop="dateModified" datetime="2020-03-29T15:20:00+08:00">
+              2020-03-29
             </time>
             
           </span>
@@ -351,11 +351,38 @@
       
 
       
-        <p>小生不才，正处在初级学习阶段，如有不正确之处请多指教。</p>
-<hr>
+        <hr>
 <a id="more"></a>
 
-<h2 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h2><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ul>
+<h2 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h2><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h2 id="JSON-parse-amp-JSON-stringify"><a href="#JSON-parse-amp-JSON-stringify" class="headerlink" title="JSON.parse &amp; JSON.stringify"></a>JSON.parse &amp; JSON.stringify</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><code>JSON.stringify</code>的基本用法是将对象转成<code>json</code>字符串进行传递，即<code>JSON.stringify(data)</code><br>需要注意的是:</p>
+<ol>
+<li><p>转换的值是数组时：下标为<code>undefined</code>和<code>function</code>还有<code>Symbol(&#39;&#39;)</code>都会转换成<code>null</code><br>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">JSON</span>.stringify([<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="literal">undefined</span>, <span class="string">''</span>])   <span class="comment">// 打印"[null, null, '']"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>转换的值是对象时：对应value值为<code>undefined</code>和<code>function</code>还有<code>Symbol(&#39;&#39;)</code>都会导致直接忽略该属性<br>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">JSON</span>.stringify(&#123;<span class="attr">key1</span>: <span class="literal">undefined</span>, <span class="attr">key2</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;&#125;) <span class="comment">// 打印"&#123;&#125;"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>NaN Infinity</code>等在对象或数组中都返回<code>null</code></p>
+</li>
+<li><p><code>toJSON()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// toJSON()</span></span><br><span class="line"><span class="built_in">JSON</span>.stringify(&#123; <span class="attr">x</span>: <span class="number">5</span>, <span class="attr">y</span>: <span class="number">6</span>, toJSON()&#123; <span class="keyword">return</span> <span class="keyword">this</span>.x + <span class="keyword">this</span>.y; &#125; &#125;);</span><br><span class="line"><span class="comment">// '11'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>除了对象参数还有两个参数作用也很大</p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p><code>JSON.stringify(value[, replacer[, space]])</code></p>
+<p>参数含义：</p>
+<ol>
+<li><p><code>value</code>：必选，要转换的值（包括所有的数据类型，通常是对象或者数组）</p>
+</li>
+<li><p><code>replacer</code>：可选，可以是函数或数组，这个参数用处很大啊，举例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">replacer</span>(<span class="params">key, value</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Filtering out properties</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> value === <span class="string">'string'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = &#123;<span class="attr">foundation</span>: <span class="string">'Mozilla'</span>, <span class="attr">model</span>: <span class="string">'box'</span>, <span class="attr">week</span>: <span class="number">45</span>, <span class="attr">transport</span>: <span class="string">'car'</span>, <span class="attr">month</span>: <span class="number">7</span>&#125;;</span><br><span class="line"><span class="built_in">JSON</span>.stringify(foo, replacer);</span><br><span class="line"><span class="comment">// '&#123;"week":45,"month":7&#125;'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 数组</span></span><br><span class="line"><span class="built_in">JSON</span>.stringify(foo, [<span class="string">'week'</span>, <span class="string">'month'</span>]);  </span><br><span class="line"><span class="comment">// '&#123;"week":45,"month":7&#125;', only keep "week" and "month" properties</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 关系映射</span></span><br><span class="line"><span class="keyword">var</span> data =[</span><br><span class="line">&#123;</span><br><span class="line">    name: <span class="string">"程咬金"</span>,<span class="attr">sex</span>:<span class="string">"1"</span>,<span class="attr">age</span>:<span class="number">26</span>    </span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">    name: <span class="string">"程才"</span>,<span class="attr">sex</span>:<span class="string">"0"</span>,<span class="attr">age</span>:<span class="number">20</span></span><br><span class="line">&#125;,</span><br><span class="line">]</span><br><span class="line"><span class="keyword">var</span> str_json = <span class="built_in">JSON</span>.stringify(data,<span class="function"><span class="keyword">function</span>(<span class="params">key,value</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(key == <span class="string">'sex'</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> [<span class="string">"女"</span>,<span class="string">'男'</span>][value];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> value;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// [&#123;"name":"程咬金","sex":"男","age":26&#125;,&#123;"name":"程才","sex":"女","age":20&#125;]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>space</code>：可选，控制字符串中的间距，可以是数字或字符串，数字最大是10，可用在编辑器中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">JSON</span>.stringify([<span class="number">10</span>, <span class="number">30</span>], <span class="literal">null</span>, <span class="number">4</span>)</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="built_in">JSON</span>.stringify([<span class="number">10</span>, <span class="number">30</span>], <span class="literal">null</span>, <span class="string">'\t'</span>)</span><br><span class="line"><span class="comment">// "[</span></span><br><span class="line"><span class="comment">//     10,</span></span><br><span class="line"><span class="comment">//     30,</span></span><br><span class="line"><span class="comment">// ]"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
 <li>## </li>
 </ul>
 
@@ -470,7 +497,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">27</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -487,7 +514,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -522,7 +549,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#防抖"><span class="nav-number">1.</span> <span class="nav-text">防抖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">2.</span> <span class="nav-text">数组</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#防抖"><span class="nav-number">1.</span> <span class="nav-text">防抖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">2.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON-parse-amp-JSON-stringify"><span class="nav-number">3.</span> <span class="nav-text">JSON.parse &amp; JSON.stringify</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">3.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">3.2.</span> <span class="nav-text">用法</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -543,7 +570,7 @@
         <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
