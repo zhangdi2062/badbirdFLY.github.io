@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="ZhangDi的博客">
 <meta property="og:description" content="颜色继承 CSS3关键字：currentColor // 当前文字的颜色 例如border会默认取得当前元素的color的颜色值或者继承父级color的色值  兄弟选择器～ + 注意两者都表示选择元素之后的兄弟节点  ~表示元素后面所有的兄弟节点，多个  +表示元素后一个相邻的兄弟节点，一个  目前css还没有可选择前一个兄弟节点的方法，可以通过父元素选择，或js的previousElementS">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-29T07:16:04.930Z">
+<meta property="og:updated_time" content="2020-04-14T12:49:39.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS查漏补缺">
 <meta name="twitter:description" content="颜色继承 CSS3关键字：currentColor // 当前文字的颜色 例如border会默认取得当前元素的color的颜色值或者继承父级color的色值  兄弟选择器～ + 注意两者都表示选择元素之后的兄弟节点  ~表示元素后面所有的兄弟节点，多个  +表示元素后一个相邻的兄弟节点，一个  目前css还没有可选择前一个兄弟节点的方法，可以通过父元素选择，或js的previousElementS">
@@ -295,8 +295,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2020-03-29T15:16:04+08:00">
-              2020-03-29
+            <time title="Post modified" itemprop="dateModified" datetime="2020-04-14T20:49:39+08:00">
+              2020-04-14
             </time>
             
           </span>
@@ -337,7 +337,11 @@
 <p><code>~</code>表示元素后面所有的兄弟节点，多个</p>
 <p><code>+</code>表示元素后一个相邻的兄弟节点，一个</p>
 <p>目前css还没有可选择前一个兄弟节点的方法，可以通过父元素选择，或js的previousElementSibling</p>
-
+<h2 id="first-child和-first-of-type"><a href="#first-child和-first-of-type" class="headerlink" title=":first-child和:first-of-type"></a>:first-child和:first-of-type</h2><p>问题：当有如下<code>dom</code>结构时，想通过css选择<code>class</code>为<code>cate</code>并且不包括第一个子元素，正常的想法是<code>.cate:not(:first-child)</code>，结果并不能实现，却发现<code>.cate:not(:nth-child(2))</code>是符合的，但显然不符合语意</p>
+<p>解决：将<code>:not(:first-child)</code>换成<code>:not(:first-of-type)</code>,将<code>class=&quot;title&quot;</code>的元素类型换为<code>&lt;p&gt;</code>标签</p>
+<p>答疑：:<code>first-child</code> 匹配的是父元素的第一个子元素，可以说是结构上的第一个子元素。</p>
+<p><code>:first-of-type</code> 匹配的是父元素下相同类型子元素中的第一个，比如 p:first-of-type，就是指所有类型为p的子元素中的第一个。这里不再限制是第一个子元素了，只要是该类型元素的第一个就行了。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"group"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span></span><br><span class="line">        温度  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cate"</span>&gt;</span></span><br><span class="line">        1</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cate"</span>&gt;</span></span><br><span class="line">        2</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cate"</span>&gt;</span></span><br><span class="line">        3</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -499,7 +503,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色继承"><span class="nav-number">1.</span> <span class="nav-text">颜色继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兄弟选择器～"><span class="nav-number">2.</span> <span class="nav-text">兄弟选择器～ +</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色继承"><span class="nav-number">1.</span> <span class="nav-text">颜色继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兄弟选择器～"><span class="nav-number">2.</span> <span class="nav-text">兄弟选择器～ +</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#first-child和-first-of-type"><span class="nav-number">3.</span> <span class="nav-text">:first-child和:first-of-type</span></a></li></ol></div>
             
 
           </div>
