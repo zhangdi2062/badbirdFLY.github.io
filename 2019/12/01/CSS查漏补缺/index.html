@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="收集一杯雾">
 <meta property="og:description" content="颜色继承 CSS3关键字：currentColor // 当前文字的颜色 例如border会默认取得当前元素的color的颜色值或者继承父级color的色值  兄弟选择器～ + 注意两者都表示选择元素之后的兄弟节点  ~表示元素后面所有的兄弟节点，多个  +表示元素后一个相邻的兄弟节点，一个  目前css还没有可选择前一个兄弟节点的方法，可以通过父元素选择，或js的previousElementS">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-14T14:06:21.699Z">
+<meta property="og:updated_time" content="2020-07-25T09:05:59.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS查漏补缺">
 <meta name="twitter:description" content="颜色继承 CSS3关键字：currentColor // 当前文字的颜色 例如border会默认取得当前元素的color的颜色值或者继承父级color的色值  兄弟选择器～ + 注意两者都表示选择元素之后的兄弟节点  ~表示元素后面所有的兄弟节点，多个  +表示元素后一个相邻的兄弟节点，一个  目前css还没有可选择前一个兄弟节点的方法，可以通过父元素选择，或js的previousElementS">
@@ -295,8 +295,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2020-04-14T22:06:21+08:00">
-              2020-04-14
+            <time title="Post modified" itemprop="dateModified" datetime="2020-07-25T17:05:59+08:00">
+              2020-07-25
             </time>
             
           </span>
@@ -348,6 +348,9 @@
 
 <p>问题：一级菜单超出宽度后，父元素div用<code>overflow: hidden</code>导致其子元素二级菜单也被裁剪</p>
 <p>解决：没有想到好的解决办法，只能暂且采用二级菜单利用<code>position: absolute</code>定位，前提是父元素（一直div到）没有定位</p>
+<h2 id="box-shadow"><a href="#box-shadow" class="headerlink" title="box-shadow"></a>box-shadow</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 插页(阴影向内) | x偏移量 | y偏移量 | 阴影模糊半径 | 阴影扩散半径 | 阴影颜色 */</span></span><br><span class="line"><span class="comment">/* inset / outset 默认后者，可不写 */</span></span><br><span class="line"><span class="comment">/* 可以没有扩散半径，默认为0，和元素一样大小 */</span></span><br><span class="line"><span class="comment">/* 多个阴影用英文逗号隔开*/</span></span><br><span class="line"><span class="selector-tag">box-shadow</span>: <span class="selector-tag">outset</span> 0<span class="selector-tag">px</span> 0<span class="selector-tag">px</span> 10<span class="selector-tag">px</span> 2<span class="selector-tag">px</span> <span class="selector-id">#333</span>;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Box-shadow_generator" target="_blank" rel="noopener">在线生成box-shadow</a></p>
 
       
     </div>
@@ -510,7 +513,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色继承"><span class="nav-number">1.</span> <span class="nav-text">颜色继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兄弟选择器～"><span class="nav-number">2.</span> <span class="nav-text">兄弟选择器～ +</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#first-child和-first-of-type"><span class="nav-number">3.</span> <span class="nav-text">:first-child和:first-of-type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#overflow造成的困境"><span class="nav-number">4.</span> <span class="nav-text">overflow造成的困境</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色继承"><span class="nav-number">1.</span> <span class="nav-text">颜色继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兄弟选择器～"><span class="nav-number">2.</span> <span class="nav-text">兄弟选择器～ +</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#first-child和-first-of-type"><span class="nav-number">3.</span> <span class="nav-text">:first-child和:first-of-type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#overflow造成的困境"><span class="nav-number">4.</span> <span class="nav-text">overflow造成的困境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#box-shadow"><span class="nav-number">5.</span> <span class="nav-text">box-shadow</span></a></li></ol></div>
             
 
           </div>

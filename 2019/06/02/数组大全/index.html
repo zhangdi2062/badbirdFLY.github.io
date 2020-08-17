@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="收集一杯雾">
 <meta property="og:description" content="介绍数组的使用方法     1. 数组定义 数组即有序的元素序列，用数组下标区分数组中的元素  ECMAScript数组与其他语言不同的是，ECMAScript数组的每一项可以保存任何类型的数据，而且数组的大小可以动态调整，随数据的增加自动增长  2. 创建数组 两种方式：1.Array构造函数 2.数组字面量表示法  例1:   1 2 3 4 5 6 7   var names = new A">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-18T15:23:24.855Z">
+<meta property="og:updated_time" content="2020-06-20T13:52:35.936Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组大全">
 <meta name="twitter:description" content="介绍数组的使用方法     1. 数组定义 数组即有序的元素序列，用数组下标区分数组中的元素  ECMAScript数组与其他语言不同的是，ECMAScript数组的每一项可以保存任何类型的数据，而且数组的大小可以动态调整，随数据的增加自动增长  2. 创建数组 两种方式：1.Array构造函数 2.数组字面量表示法  例1:   1 2 3 4 5 6 7   var names = new A">
@@ -295,8 +295,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2019-12-18T23:23:24+08:00">
-              2019-12-18
+            <time title="Post modified" itemprop="dateModified" datetime="2020-06-20T21:52:35+08:00">
+              2020-06-20
             </time>
             
           </span>
@@ -382,31 +382,52 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString.call([]) <span class="comment">//[object Array]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> isType = <span class="function"><span class="params">type</span> =&gt;</span> target =&gt; <span class="string">`[object <span class="subst">$&#123;type&#125;</span>]`</span> === <span class="built_in">Object</span>.prototype.toString.call(target)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> isArray = isType(<span class="string">'Array'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(isArray([])) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
 <p>使用 Object.prototype.toString 配合闭包，通过传入不同的判断类型来返回不同的判断函数</p>
-<h2 id="4-转换方法"><a href="#4-转换方法" class="headerlink" title="4. 转换方法"></a>4. 转换方法</h2><h2 id="5-迭代方法：不改变原数组"><a href="#5-迭代方法：不改变原数组" class="headerlink" title="5. 迭代方法：不改变原数组"></a>5. 迭代方法：不改变原数组</h2><ol>
-<li>every() 所有都符合条件返回true，否则返回false</li>
+<h2 id="4-操作方法，添加-删除元素"><a href="#4-操作方法，添加-删除元素" class="headerlink" title="4. 操作方法，添加/删除元素"></a>4. 操作方法，添加/删除元素</h2><ol>
+<li><code>push(...items)</code> 从结尾添加元素，返回数组长度</li>
+<li><code>unshift(...items)</code> 从开头添加元素，返回数组长度</li>
+<li><code>pop()</code> 从结尾删除元素，返回被删元素</li>
+<li><code>shift()</code> 从开头删除元素，返回被删元素</li>
+<li><code>slice(start, end)</code> start必需，如果是负数，则从数组尾部开始算起，-1即倒数第一个元素<br>end选填，不填默认到最后一个元素<br>不改变原数组，返回一个新数组，包括start，不包括end</li>
+<li><code>splice(start, deleteCount, ...items)</code> 从索引start开始，删除deleteCount个元素，并添加items个元素<br>start必需，如果是负数，则从数组尾部开始算起<br>deleteCount必需，删除几个元素，大于等于0<br>返回删除的元素数组，改变原数组</li>
+<li><code>concat(...items)</code> items可以是数组形式或者单个形式</li>
+<li><code>fill(value, start, end)</code> 填充元素，改变原数组<br>value 填充的值<br>start 元素填充的起始位置<br>end 停止填充的索引位置</li>
+<li><code>copyWithin(targer, start, end)</code> 覆盖元素，改变原数组<br>target 必需，从索引位置开始准备复制<br>start 可选，元素复制的起始位置<br>end 可选，停止复制的索引位置</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> isTrue = arr.every(<span class="function">(<span class="params">item,index,array</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item &gt; <span class="number">3</span></span><br><span class="line">&#125;) <span class="comment">// isTrue = false</span></span><br></pre></td></tr></table></figure>
+<h2 id="5-查询方法"><a href="#5-查询方法" class="headerlink" title="5. 查询方法"></a>5. 查询方法</h2><ol>
+<li><code>indexOf/lastIndexOf(item, pos)</code> 返回索引值，找不到返回-1</li>
+<li><code>includes</code> 返回true/false</li>
+</ol>
+<h2 id="6-迭代方法-每个数组项进行操作-：不改变原数组"><a href="#6-迭代方法-每个数组项进行操作-：不改变原数组" class="headerlink" title="6. 迭代方法(每个数组项进行操作)：不改变原数组"></a>6. 迭代方法(每个数组项进行操作)：不改变原数组</h2><ol>
+<li><code>forEach()</code> 遍历数组，对数组进行操作，没有返回值<br>注意： <code>forEach</code>对于empty是不执行的</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="comment">// 接收3个参数，项目值,索引值,数组本身</span></span><br><span class="line">arr.forEach(<span class="function">(<span class="params">item,index,array</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(index)</span><br><span class="line">&#125;) <span class="comment">//依次输出0 1 2 3 4</span></span><br></pre></td></tr></table></figure>
 
 <ol start="2">
-<li>some() 只要有符合条件的就返回true，都不符合返回false</li>
+<li><code>map()</code> 对整个数组进行操作</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> isTrue = arr.some(<span class="function">(<span class="params">item,index,array</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item &gt; <span class="number">3</span></span><br><span class="line">&#125;) <span class="comment">// isTrue = true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> newArr = arr.map(<span class="function">(<span class="params">item,index,array</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item + <span class="number">2</span></span><br><span class="line">&#125;)  <span class="comment">//newArr = [3, 4, 5, 6, 7]</span></span><br></pre></td></tr></table></figure>
 
 <ol start="3">
-<li>filter()筛选返回符合条件的数组</li>
+<li><code>filter()</code>筛选返回符合条件的数组</li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> newArr = arr.filter(<span class="function">(<span class="params">item,index,array</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item &gt; <span class="number">3</span></span><br><span class="line">&#125;)  <span class="comment">//newArr = [4,5]</span></span><br></pre></td></tr></table></figure>
 
 <ol start="4">
-<li>map() 对整个数组进行操作</li>
+<li><code>every()</code> 所有都符合条件返回true，否则返回false</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> newArr = arr.map(<span class="function">(<span class="params">item,index,array</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item + <span class="number">2</span></span><br><span class="line">&#125;)  <span class="comment">//newArr = [3, 4, 5, 6, 7]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> isTrue = arr.every(<span class="function">(<span class="params">item,index,array</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item &gt; <span class="number">3</span></span><br><span class="line">&#125;) <span class="comment">// isTrue = false</span></span><br></pre></td></tr></table></figure>
 
 <ol start="5">
-<li>forEach() 遍历数组，对数组进行操作，没有返回值</li>
+<li><code>some()</code> 只要有符合条件的就返回true，都不符合返回false</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">arr.forEach(<span class="function">(<span class="params">item,index,array</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(index)</span><br><span class="line">&#125;) <span class="comment">//依次输出0 1 2 3 4</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> isTrue = arr.some(<span class="function">(<span class="params">item,index,array</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item &gt; <span class="number">3</span></span><br><span class="line">&#125;) <span class="comment">// isTrue = true</span></span><br></pre></td></tr></table></figure>
 
+<ol start="6">
+<li><p><code>find()</code> 返回数组中第一个满足所提供测试函数的元素的值，用的较少</p>
+</li>
+<li><p><code>findIndex()</code> 返回数组中满足提供的测试函数的第一个元素的索引，用的较少</p>
+</li>
+</ol>
 
       
     </div>
@@ -571,7 +592,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组定义"><span class="nav-number">1.</span> <span class="nav-text">1. 数组定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-创建数组"><span class="nav-number">2.</span> <span class="nav-text">2. 创建数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-检测数组"><span class="nav-number">3.</span> <span class="nav-text">3. 检测数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-转换方法"><span class="nav-number">4.</span> <span class="nav-text">4. 转换方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-迭代方法：不改变原数组"><span class="nav-number">5.</span> <span class="nav-text">5. 迭代方法：不改变原数组</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组定义"><span class="nav-number">1.</span> <span class="nav-text">1. 数组定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-创建数组"><span class="nav-number">2.</span> <span class="nav-text">2. 创建数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-检测数组"><span class="nav-number">3.</span> <span class="nav-text">3. 检测数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-操作方法，添加-删除元素"><span class="nav-number">4.</span> <span class="nav-text">4. 操作方法，添加/删除元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-查询方法"><span class="nav-number">5.</span> <span class="nav-text">5. 查询方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-迭代方法-每个数组项进行操作-：不改变原数组"><span class="nav-number">6.</span> <span class="nav-text">6. 迭代方法(每个数组项进行操作)：不改变原数组</span></a></li></ol></div>
             
 
           </div>

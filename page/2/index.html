@@ -602,8 +602,8 @@ ChartBuilder提供一些基本的场景模板，满足一些基本的业务需�
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2019-12-18T23:23:24+08:00">
-              2019-12-18
+            <time title="Post modified" itemprop="dateModified" datetime="2020-06-28T19:21:06+08:00">
+              2020-06-28
             </time>
             
           </span>
@@ -635,10 +635,22 @@ ChartBuilder提供一些基本的场景模板，满足一些基本的业务需�
 
       
         
-          1. 新建远程分支
+          1. clone项目没有权限
+
+解决：
+
+采用https克隆方式，加上用户名和生成一个访问令牌
+
+git clone https://username:AccessTokens@git.uinnova.com/doiot/proxima/proxima-menu-layer-lib.git
+
+ 2. 新建远程分支
 
 新建一个本地分支，例如： git checkout -b feat-theme
-提交commit，推到远程分支git push origin feat-theme 注意要同名，这样远程分支上就有一个feat-theme的分支啦
+提交commit，推到远程分支git push origin feat-theme 注意要同名，这样远程分支上就有一个feat-theme的分支了
+
+ 3. 在不同分支上推同一文件
+
+从feat-bas
           <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/2019/07/28/git使用/#more" rel="contents">
