@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="收集一杯雾">
 <meta property="og:description" content="介绍数组的使用方法     1. 数组定义 数组即有序的元素序列，用数组下标区分数组中的元素  ECMAScript数组与其他语言不同的是，ECMAScript数组的每一项可以保存任何类型的数据，而且数组的大小可以动态调整，随数据的增加自动增长  2. 创建数组 两种方式：1.Array构造函数 2.数组字面量表示法  例1:   1 2 3 4 5 6 7   var names = new A">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-06-20T13:52:35.936Z">
+<meta property="og:updated_time" content="2020-11-22T08:16:20.379Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组大全">
 <meta name="twitter:description" content="介绍数组的使用方法     1. 数组定义 数组即有序的元素序列，用数组下标区分数组中的元素  ECMAScript数组与其他语言不同的是，ECMAScript数组的每一项可以保存任何类型的数据，而且数组的大小可以动态调整，随数据的增加自动增长  2. 创建数组 两种方式：1.Array构造函数 2.数组字面量表示法  例1:   1 2 3 4 5 6 7   var names = new A">
@@ -295,8 +295,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2020-06-20T21:52:35+08:00">
-              2020-06-20
+            <time title="Post modified" itemprop="dateModified" datetime="2020-11-22T16:16:20+08:00">
+              2020-11-22
             </time>
             
           </span>
@@ -428,6 +428,9 @@
 <li><p><code>findIndex()</code> 返回数组中满足提供的测试函数的第一个元素的索引，用的较少</p>
 </li>
 </ol>
+<h2 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h2><p><code>sort()</code> 排序 默认排序顺序是在将元素转换为字符串，然后比较它们的UTF-16代码单元值序列时构建的</p>
+<p><code>[1,10,30,4].sort((a, b) =&gt; a - b)</code> 从小到大排序，升序</p>
+<p>返回值大于0 即a-b &gt; 0 ， a 和 b 交换位置<br>返回值大于0 即a-b &lt; 0 ， a 和 b 位置不变<br>返回值等于0 即a-b = 0 ， a 和 b 位置不变</p>
 
       
     </div>
@@ -540,7 +543,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">28</span>
+              <span class="site-state-item-count">30</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -557,7 +560,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -592,7 +595,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组定义"><span class="nav-number">1.</span> <span class="nav-text">1. 数组定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-创建数组"><span class="nav-number">2.</span> <span class="nav-text">2. 创建数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-检测数组"><span class="nav-number">3.</span> <span class="nav-text">3. 检测数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-操作方法，添加-删除元素"><span class="nav-number">4.</span> <span class="nav-text">4. 操作方法，添加/删除元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-查询方法"><span class="nav-number">5.</span> <span class="nav-text">5. 查询方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-迭代方法-每个数组项进行操作-：不改变原数组"><span class="nav-number">6.</span> <span class="nav-text">6. 迭代方法(每个数组项进行操作)：不改变原数组</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组定义"><span class="nav-number">1.</span> <span class="nav-text">1. 数组定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-创建数组"><span class="nav-number">2.</span> <span class="nav-text">2. 创建数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-检测数组"><span class="nav-number">3.</span> <span class="nav-text">3. 检测数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-操作方法，添加-删除元素"><span class="nav-number">4.</span> <span class="nav-text">4. 操作方法，添加/删除元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-查询方法"><span class="nav-number">5.</span> <span class="nav-text">5. 查询方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-迭代方法-每个数组项进行操作-：不改变原数组"><span class="nav-number">6.</span> <span class="nav-text">6. 迭代方法(每个数组项进行操作)：不改变原数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7"><span class="nav-number">7.</span> <span class="nav-text">7.</span></a></li></ol></div>
             
 
           </div>
