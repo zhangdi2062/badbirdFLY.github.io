@@ -84,19 +84,19 @@
 
 
 
-<meta name="description" content="做项目时总会有一些需求，嵌入第三方页面，方式就用iframe嵌入，使用过程中出现一些问题，是用到就要注意的  做个总结  用法 1      开始了！！！   1. 边框 frameborder=&quot;0&quot;  frameborder有两个值，1显示边框，0不显示边框    不取消边框的效果是：    2. 滚动条scrolling=&quot;no&quot;  滚动条,在哪里都不招人待见，宽宽一条，解决它   2.">
+<meta name="description" content="做项目时总会有一些需求，嵌入第三方页面，方式就用iframe嵌入，使用过程中出现一些问题，是用到就要注意的 做个总结 用法1&amp;lt;iframe src=&quot;&quot;&amp;gt;&amp;lt;/iframe&amp;gt;  开始了！！！  边框 frameborder=&amp;quot;0&amp;quot;  frameborder有两个值，1显示边框，0不显示边框 &amp;lt;iframe src=&amp;quot;&amp;quot; frame">
 <meta name="keywords" content="前端,学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iframe的坑">
 <meta property="og:url" content="https://badbirdfly.github.io/2020/05/30/iframe的坑/index.html">
 <meta property="og:site_name" content="收集一杯雾">
-<meta property="og:description" content="做项目时总会有一些需求，嵌入第三方页面，方式就用iframe嵌入，使用过程中出现一些问题，是用到就要注意的  做个总结  用法 1      开始了！！！   1. 边框 frameborder=&quot;0&quot;  frameborder有两个值，1显示边框，0不显示边框    不取消边框的效果是：    2. 滚动条scrolling=&quot;no&quot;  滚动条,在哪里都不招人待见，宽宽一条，解决它   2.">
+<meta property="og:description" content="做项目时总会有一些需求，嵌入第三方页面，方式就用iframe嵌入，使用过程中出现一些问题，是用到就要注意的 做个总结 用法1&amp;lt;iframe src=&quot;&quot;&amp;gt;&amp;lt;/iframe&amp;gt;  开始了！！！  边框 frameborder=&amp;quot;0&amp;quot;  frameborder有两个值，1显示边框，0不显示边框 &amp;lt;iframe src=&amp;quot;&amp;quot; frame">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/badbirdFLY/picGo/master/img/iframeBorder.png">
-<meta property="og:updated_time" content="2020-05-31T02:50:43.766Z">
+<meta property="og:updated_time" content="2020-12-11T14:04:03.412Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iframe的坑">
-<meta name="twitter:description" content="做项目时总会有一些需求，嵌入第三方页面，方式就用iframe嵌入，使用过程中出现一些问题，是用到就要注意的  做个总结  用法 1      开始了！！！   1. 边框 frameborder=&quot;0&quot;  frameborder有两个值，1显示边框，0不显示边框    不取消边框的效果是：    2. 滚动条scrolling=&quot;no&quot;  滚动条,在哪里都不招人待见，宽宽一条，解决它   2.">
+<meta name="twitter:description" content="做项目时总会有一些需求，嵌入第三方页面，方式就用iframe嵌入，使用过程中出现一些问题，是用到就要注意的 做个总结 用法1&amp;lt;iframe src=&quot;&quot;&amp;gt;&amp;lt;/iframe&amp;gt;  开始了！！！  边框 frameborder=&amp;quot;0&amp;quot;  frameborder有两个值，1显示边框，0不显示边框 &amp;lt;iframe src=&amp;quot;&amp;quot; frame">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/badbirdFLY/picGo/master/img/iframeBorder.png">
 
 
@@ -297,8 +297,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2020-05-31T10:50:43+08:00">
-              2020-05-31
+            <time title="Post modified" itemprop="dateModified" datetime="2020-12-11T22:04:03+08:00">
+              2020-12-11
             </time>
             
           </span>
@@ -385,7 +385,9 @@
 <p>默认宽高是300 * 150，设置宽高直接设置，数值或百分比<br><code>&lt;iframe src=&quot;&quot; width=&quot;100%&quot; height=&quot;300&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></p>
 <p>注意</p>
 <p>设置高度</p>
+<h3 id="通信"><a href="#通信" class="headerlink" title="通信"></a>通信</h3><h4 id="同源"><a href="#同源" class="headerlink" title="同源"></a>同源</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">parent.html</span><br><span class="line"></span><br><span class="line">&lt;iframe name=<span class="string">"myframe"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">const</span> frame = <span class="built_in">document</span>.getElementById(<span class="string">'myframe'</span>);</span><br><span class="line">    frame.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        myFrame.window.say(); <span class="comment">// 调用子页面方法</span></span><br><span class="line">        myFrame.window.document.getElementById(<span class="string">"button"</span>).value=<span class="string">"调用结束"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">child.html</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;div&gt;我是child&lt;/</span>div&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">"child.html"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">callParent</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        parent.say();</span><br><span class="line">        parent.window.document.getElementById(<span class="string">"button"</span>).value=<span class="string">"调用结束"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h4 id="不同源"><a href="#不同源" class="headerlink" title="不同源"></a>不同源</h4>
       
     </div>
 
@@ -489,7 +491,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -541,7 +543,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">1.</span> <span class="nav-text">用法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">1.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通信"><span class="nav-number">2.</span> <span class="nav-text">通信</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#同源"><span class="nav-number">2.1.</span> <span class="nav-text">同源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不同源"><span class="nav-number">2.2.</span> <span class="nav-text">不同源</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -562,7 +564,7 @@
         <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

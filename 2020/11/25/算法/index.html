@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="时间复杂度 运行时间  一套图 搞懂“时间复杂度”  空间复杂度 占用空间  LeetCode题目 350两数组交集 正常 map映射 “两个数组的交集元素，同时应与两个数组中出现的次数一致” 此题可以看成是一道传统的映射题（map映射），为什么可以这样看呢，因为我们需找出两个数组的交集元素，同时应与两个数组中出现的次数一致。这样就导致了我们需要知道每个值出现的次数，所以映射关系就成了。  哈希表">
+<meta name="description" content="算法介绍 + LeetCode题目">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法">
 <meta property="og:url" content="https://badbirdfly.github.io/2020/11/25/算法/index.html">
 <meta property="og:site_name" content="收集一杯雾">
-<meta property="og:description" content="时间复杂度 运行时间  一套图 搞懂“时间复杂度”  空间复杂度 占用空间  LeetCode题目 350两数组交集 正常 map映射 “两个数组的交集元素，同时应与两个数组中出现的次数一致” 此题可以看成是一道传统的映射题（map映射），为什么可以这样看呢，因为我们需找出两个数组的交集元素，同时应与两个数组中出现的次数一致。这样就导致了我们需要知道每个值出现的次数，所以映射关系就成了。  哈希表">
+<meta property="og:description" content="算法介绍 + LeetCode题目">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-11-25T15:38:37.613Z">
+<meta property="og:updated_time" content="2021-01-04T15:03:50.938Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法">
-<meta name="twitter:description" content="时间复杂度 运行时间  一套图 搞懂“时间复杂度”  空间复杂度 占用空间  LeetCode题目 350两数组交集 正常 map映射 “两个数组的交集元素，同时应与两个数组中出现的次数一致” 此题可以看成是一道传统的映射题（map映射），为什么可以这样看呢，因为我们需找出两个数组的交集元素，同时应与两个数组中出现的次数一致。这样就导致了我们需要知道每个值出现的次数，所以映射关系就成了。  哈希表">
+<meta name="twitter:description" content="算法介绍 + LeetCode题目">
 
 
 
@@ -295,8 +295,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2020-11-25T23:38:37+08:00">
-              2020-11-25
+            <time title="Post modified" itemprop="dateModified" datetime="2021-01-04T23:03:50+08:00">
+              2021-01-04
             </time>
             
           </span>
@@ -332,7 +332,10 @@
       
 
       
-        <h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>运行时间</p>
+        <p>算法介绍 + LeetCode题目</p>
+<a id="more"></a>
+
+<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>运行时间</p>
 <p><a href="https://blog.csdn.net/qq_41523096/article/details/82142747" target="_blank" rel="noopener">一套图 搞懂“时间复杂度”</a></p>
 <h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><p>占用空间</p>
 <h2 id="LeetCode题目"><a href="#LeetCode题目" class="headerlink" title="LeetCode题目"></a>LeetCode题目</h2><h3 id="350两数组交集"><a href="#350两数组交集" class="headerlink" title="350两数组交集"></a>350两数组交集</h3><h4 id="正常-map映射-“两个数组的交集元素，同时应与两个数组中出现的次数一致”"><a href="#正常-map映射-“两个数组的交集元素，同时应与两个数组中出现的次数一致”" class="headerlink" title="正常 map映射 “两个数组的交集元素，同时应与两个数组中出现的次数一致”"></a>正常 map映射 “两个数组的交集元素，同时应与两个数组中出现的次数一致”</h4><p>此题可以看成是一道传统的<bold>映射题（map映射）</bold>，为什么可以这样看呢，因为我们需找出两个数组的交集元素，同时应与两个数组中出现的次数一致。这样就导致了我们需要知道每个值出现的次数，所以映射关系就成了&lt;元素,出现次数&gt;。</p>
@@ -340,8 +343,10 @@
 <h4 id="进阶-双指针-“给定的数组已经排好序”"><a href="#进阶-双指针-“给定的数组已经排好序”" class="headerlink" title="进阶 双指针 “给定的数组已经排好序”"></a>进阶 双指针 “给定的数组已经排好序”</h4><p>排序后，同时遍历两个数组，指针指向0，两者相等，指针各+1，不相等小的值指针+1，直到指针溢出</p>
 <h3 id="13最长公共前缀"><a href="#13最长公共前缀" class="headerlink" title="13最长公共前缀"></a>13最长公共前缀</h3><h4 id="横向扫描"><a href="#横向扫描" class="headerlink" title="横向扫描"></a>横向扫描</h4><p>先得到第一个和第二个元素的公共部分，公共部分再和第三个元素比较得到公共部分…</p>
 <h4 id="纵向扫描"><a href="#纵向扫描" class="headerlink" title="纵向扫描"></a>纵向扫描</h4><p>遍历所有数值的第一个字符，相同遍历第二个字符…</p>
-<h3 id="买卖股票的最佳时机"><a href="#买卖股票的最佳时机" class="headerlink" title="买卖股票的最佳时机"></a>买卖股票的最佳时机</h3><h4 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h4><p>根据绘制的折线图，得出拐点处的和相加即为最大利润</p>
-
+<h3 id="122买卖股票的最佳时机"><a href="#122买卖股票的最佳时机" class="headerlink" title="122买卖股票的最佳时机"></a>122买卖股票的最佳时机</h3><h4 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h4><p>根据绘制的折线图，得出拐点处的和相加即为最大利润</p>
+<h3 id="945使数组唯一的最小增量"><a href="#945使数组唯一的最小增量" class="headerlink" title="945使数组唯一的最小增量"></a>945使数组唯一的最小增量</h3><h4 id="暴力解法超时"><a href="#暴力解法超时" class="headerlink" title="暴力解法超时"></a>暴力解法超时</h4><p>获取所有重复的数值，然后持续+1找到数组中不存在的值，时间复杂度O(N^2);</p>
+<h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><p>先 生序排序，循环，当前&lt;=前一个，则当前值赋值 前一个值+1，移动次数为 当前值 - 原来值</p>
+<h4 id="计数"><a href="#计数" class="headerlink" title="计数"></a>计数</h4><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="5"><a href="#5" class="headerlink" title="5"></a>5</h3><h3 id="53最大子序和"><a href="#53最大子序和" class="headerlink" title="53最大子序和"></a>53最大子序和</h3>
       
     </div>
 
@@ -447,7 +452,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -499,7 +504,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空间复杂度"><span class="nav-number">2.</span> <span class="nav-text">空间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LeetCode题目"><span class="nav-number">3.</span> <span class="nav-text">LeetCode题目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#350两数组交集"><span class="nav-number">3.1.</span> <span class="nav-text">350两数组交集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正常-map映射-“两个数组的交集元素，同时应与两个数组中出现的次数一致”"><span class="nav-number">3.1.1.</span> <span class="nav-text">正常 map映射 “两个数组的交集元素，同时应与两个数组中出现的次数一致”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进阶-双指针-“给定的数组已经排好序”"><span class="nav-number">3.1.2.</span> <span class="nav-text">进阶 双指针 “给定的数组已经排好序”</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13最长公共前缀"><span class="nav-number">3.2.</span> <span class="nav-text">13最长公共前缀</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#横向扫描"><span class="nav-number">3.2.1.</span> <span class="nav-text">横向扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#纵向扫描"><span class="nav-number">3.2.2.</span> <span class="nav-text">纵向扫描</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#买卖股票的最佳时机"><span class="nav-number">3.3.</span> <span class="nav-text">买卖股票的最佳时机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#图解"><span class="nav-number">3.3.1.</span> <span class="nav-text">图解</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空间复杂度"><span class="nav-number">2.</span> <span class="nav-text">空间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LeetCode题目"><span class="nav-number">3.</span> <span class="nav-text">LeetCode题目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#350两数组交集"><span class="nav-number">3.1.</span> <span class="nav-text">350两数组交集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正常-map映射-“两个数组的交集元素，同时应与两个数组中出现的次数一致”"><span class="nav-number">3.1.1.</span> <span class="nav-text">正常 map映射 “两个数组的交集元素，同时应与两个数组中出现的次数一致”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进阶-双指针-“给定的数组已经排好序”"><span class="nav-number">3.1.2.</span> <span class="nav-text">进阶 双指针 “给定的数组已经排好序”</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13最长公共前缀"><span class="nav-number">3.2.</span> <span class="nav-text">13最长公共前缀</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#横向扫描"><span class="nav-number">3.2.1.</span> <span class="nav-text">横向扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#纵向扫描"><span class="nav-number">3.2.2.</span> <span class="nav-text">纵向扫描</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#122买卖股票的最佳时机"><span class="nav-number">3.3.</span> <span class="nav-text">122买卖股票的最佳时机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#图解"><span class="nav-number">3.3.1.</span> <span class="nav-text">图解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#945使数组唯一的最小增量"><span class="nav-number">3.4.</span> <span class="nav-text">945使数组唯一的最小增量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#暴力解法超时"><span class="nav-number">3.4.1.</span> <span class="nav-text">暴力解法超时</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#排序"><span class="nav-number">3.4.2.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计数"><span class="nav-number">3.4.3.</span> <span class="nav-text">计数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态规划"><span class="nav-number">4.</span> <span class="nav-text">动态规划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5"><span class="nav-number">4.1.</span> <span class="nav-text">5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#53最大子序和"><span class="nav-number">4.2.</span> <span class="nav-text">53最大子序和</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -520,7 +525,7 @@
         <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

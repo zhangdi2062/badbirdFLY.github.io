@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="介绍数组的使用方法     1. 数组定义 数组即有序的元素序列，用数组下标区分数组中的元素  ECMAScript数组与其他语言不同的是，ECMAScript数组的每一项可以保存任何类型的数据，而且数组的大小可以动态调整，随数据的增加自动增长  2. 创建数组 两种方式：1.Array构造函数 2.数组字面量表示法  例1:   1 2 3 4 5 6 7   var names = new A">
+<meta name="description" content="介绍数组的使用方法">
 <meta name="keywords" content="前端,数组">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数组大全">
 <meta property="og:url" content="https://badbirdfly.github.io/2019/06/02/数组大全/index.html">
 <meta property="og:site_name" content="收集一杯雾">
-<meta property="og:description" content="介绍数组的使用方法     1. 数组定义 数组即有序的元素序列，用数组下标区分数组中的元素  ECMAScript数组与其他语言不同的是，ECMAScript数组的每一项可以保存任何类型的数据，而且数组的大小可以动态调整，随数据的增加自动增长  2. 创建数组 两种方式：1.Array构造函数 2.数组字面量表示法  例1:   1 2 3 4 5 6 7   var names = new A">
+<meta property="og:description" content="介绍数组的使用方法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-11-22T08:16:20.379Z">
+<meta property="og:updated_time" content="2020-12-25T14:16:27.263Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组大全">
-<meta name="twitter:description" content="介绍数组的使用方法     1. 数组定义 数组即有序的元素序列，用数组下标区分数组中的元素  ECMAScript数组与其他语言不同的是，ECMAScript数组的每一项可以保存任何类型的数据，而且数组的大小可以动态调整，随数据的增加自动增长  2. 创建数组 两种方式：1.Array构造函数 2.数组字面量表示法  例1:   1 2 3 4 5 6 7   var names = new A">
+<meta name="twitter:description" content="介绍数组的使用方法">
 
 
 
@@ -295,8 +295,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2020-11-22T16:16:20+08:00">
-              2020-11-22
+            <time title="Post modified" itemprop="dateModified" datetime="2020-12-25T22:16:27+08:00">
+              2020-12-25
             </time>
             
           </span>
@@ -403,9 +403,9 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="comment">// 接收3个参数，项目值,索引值,数组本身</span></span><br><span class="line">arr.forEach(<span class="function">(<span class="params">item,index,array</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(index)</span><br><span class="line">&#125;) <span class="comment">//依次输出0 1 2 3 4</span></span><br></pre></td></tr></table></figure>
 
 <ol start="2">
-<li><code>map()</code> 对整个数组进行操作</li>
+<li><code>map()</code> 对整个数组进行操作，返回什么值，当前这个索引值就是什么值</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> newArr = arr.map(<span class="function">(<span class="params">item,index,array</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item + <span class="number">2</span></span><br><span class="line">&#125;)  <span class="comment">//newArr = [3, 4, 5, 6, 7]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> newArr = arr.map(<span class="function">(<span class="params">item,index,array</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item + <span class="number">2</span></span><br><span class="line">&#125;)  <span class="comment">//newArr = [3, 4, 5, 6, 7]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> newArr = arr.map(<span class="function">(<span class="params">item,index,array</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="attr">a</span>: <span class="string">'anything'</span>&#125;</span><br><span class="line">&#125;)  <span class="comment">//newArr = [&#123;a: 'anything'&#125;,&#123;a: 'anything'&#125;,&#123;a: 'anything'&#125;,&#123;a: 'anything'&#125;,&#123;a: 'anything'&#125;]</span></span><br></pre></td></tr></table></figure>
 
 <ol start="3">
 <li><code>filter()</code>筛选返回符合条件的数组</li>
@@ -543,7 +543,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -616,7 +616,7 @@
         <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

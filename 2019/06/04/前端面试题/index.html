@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="算法题之「两数之和」  给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。  你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。  示例：  1 2 3 4   给定 nums = [2, 7, 11, 15], target = 9  因为 nums[0] + nums[1] = 2 + 7 = 9 所以返回 [0, 1]   答案：  1 2 3 4 5 6 7 8 9">
+<meta name="description" content="算法题之「两数之和」  给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。 你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。 示例： 1234给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1]  答案： 1234567891011121314151617181920">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端面试题">
 <meta property="og:url" content="https://badbirdfly.github.io/2019/06/04/前端面试题/index.html">
 <meta property="og:site_name" content="收集一杯雾">
-<meta property="og:description" content="算法题之「两数之和」  给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。  你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。  示例：  1 2 3 4   给定 nums = [2, 7, 11, 15], target = 9  因为 nums[0] + nums[1] = 2 + 7 = 9 所以返回 [0, 1]   答案：  1 2 3 4 5 6 7 8 9">
+<meta property="og:description" content="算法题之「两数之和」  给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。 你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。 示例： 1234给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1]  答案： 1234567891011121314151617181920">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-18T15:23:24.852Z">
+<meta property="og:updated_time" content="2020-12-27T02:55:56.164Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端面试题">
-<meta name="twitter:description" content="算法题之「两数之和」  给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。  你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。  示例：  1 2 3 4   给定 nums = [2, 7, 11, 15], target = 9  因为 nums[0] + nums[1] = 2 + 7 = 9 所以返回 [0, 1]   答案：  1 2 3 4 5 6 7 8 9">
+<meta name="twitter:description" content="算法题之「两数之和」  给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。 你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。 示例： 1234给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1]  答案： 1234567891011121314151617181920">
 
 
 
@@ -295,8 +295,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2019-12-18T23:23:24+08:00">
-              2019-12-18
+            <time title="Post modified" itemprop="dateModified" datetime="2020-12-27T10:55:56+08:00">
+              2020-12-27
             </time>
             
           </span>
@@ -362,7 +362,20 @@
 <p>答案：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 法一：两层for循环正向比较</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">count</span>(<span class="params">nums, target</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> len = nums.length</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> arr = []</span><br><span class="line">    <span class="keyword">let</span> subarr = []</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] + nums[j] === target) &#123;</span><br><span class="line">                arr.push(nums[i], nums[j])</span><br><span class="line">                subarr.push(i, j)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (arr === []) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'no result'</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'数值：'</span> + arr)</span><br><span class="line">        <span class="keyword">return</span> subarr</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 法二：for循环没有嵌套</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">anwser</span> (<span class="params">arr, target</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> map = &#123;&#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    map[arr[i]] = i</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> d = target - arr[i]</span><br><span class="line">    <span class="keyword">if</span> (map[d] &amp;&amp; map[d] != i) &#123;</span><br><span class="line">      <span class="keyword">return</span> [i, map[d]]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'no result'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="递归，递归就是函数运行中调用了自己，一定要有终止条件，否则程序会因栈溢出而崩溃"><a href="#递归，递归就是函数运行中调用了自己，一定要有终止条件，否则程序会因栈溢出而崩溃" class="headerlink" title="递归，递归就是函数运行中调用了自己，一定要有终止条件，否则程序会因栈溢出而崩溃"></a>递归，递归就是函数运行中调用了自己，一定要有终止条件，否则程序会因栈溢出而崩溃</h2><ol>
+<li>斐波那契数列，1,1,2,3,5,8,第n项=前两项之和</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fibonacci</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n == <span class="number">1</span> || n == <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> fibonacci(n - <span class="number">1</span>) + fibonacci(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 法二</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fibonacci</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n == <span class="number">1</span> || n == <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">1</span>], i = <span class="number">3</span>, sum = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (i &lt;= n) &#123;</span><br><span class="line">    sum = arr[<span class="number">0</span>] + arr[<span class="number">1</span>];</span><br><span class="line">    arr[<span class="number">0</span>] = arr[<span class="number">1</span>];</span><br><span class="line">    arr[<span class="number">1</span>] = sum;</span><br><span class="line">    i++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<ol start="2">
+<li>一元钱可以买一瓶水，两个空瓶可以换一瓶水，三个瓶盖可以换一瓶水，20块钱可以换多少瓶水</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 借鉴思路；1元   1瓶      </span></span><br><span class="line"><span class="comment">//			2元  5瓶  		</span></span><br><span class="line"><span class="comment">//			3元  11瓶		</span></span><br><span class="line"><span class="comment">//			4元  17瓶		</span></span><br><span class="line"><span class="comment">//			5元   23瓶	</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">water</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">1</span>;<span class="comment">//第一位与后面的数字没有规律  当计算一元钱时     直接return</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(n == <span class="number">2</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">5</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> water(n - <span class="number">1</span>) + <span class="number">6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>阅读下方程序，写出函数调用: <code>fun(2,3,4)</code>的输出结果</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">...dimentions</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [layer, ...d] = dimentions;</span><br><span class="line">  <span class="keyword">return</span> d.length ? <span class="built_in">Array</span>(layer).fill(<span class="number">0</span>).map(<span class="function"><span class="params">_</span> =&gt;</span> fun(...d)) : <span class="built_in">Array</span>(layer);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 解析</span></span><br><span class="line">fun(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>) = <span class="built_in">Array</span>(layer).fill(<span class="number">0</span>).map(<span class="function"><span class="params">_</span> =&gt;</span> fun(<span class="number">3</span>,<span class="number">4</span>)); <span class="comment">// [[[4*empty], [4*empty], [4*empty]], [[4*empty], [4*empty], [4*empty]]]</span></span><br><span class="line">fun(<span class="number">3</span>,<span class="number">4</span>) = <span class="built_in">Array</span>(layer).fill(<span class="number">0</span>).map(<span class="function"><span class="params">_</span> =&gt;</span> fun(<span class="number">4</span>)); <span class="comment">// [[4*empty], [4*empty], [4*empty]]</span></span><br><span class="line">fun(<span class="number">4</span>) = <span class="built_in">Array</span>(<span class="number">4</span>); <span class="comment">// 长度为4，数值为空</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -453,8 +466,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Zhang Di">
           <p class="site-author-name" itemprop="name">Zhang Di</p>
@@ -463,7 +485,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-count">29</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -506,6 +528,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#递归，递归就是函数运行中调用了自己，一定要有终止条件，否则程序会因栈溢出而崩溃"><span class="nav-number">1.</span> <span class="nav-text">递归，递归就是函数运行中调用了自己，一定要有终止条件，否则程序会因栈溢出而崩溃</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
     </div>
   </aside>
@@ -520,7 +558,7 @@
         <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
