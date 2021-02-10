@@ -296,7 +296,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2021-02-11T00:06:02+08:00">
+            <time title="Post modified" itemprop="dateModified" datetime="2021-02-11T00:23:08+08:00">
               2021-02-11
             </time>
             
@@ -332,15 +332,15 @@
           
             <script>
 const arr = [
-    '凛冬散尽，星河长明，新的一年，万事顺遂。',
-    '愿新的一年，仍有阳光满路，温暖如初。',
-    '新的一年，万物更新，旧疾当愈，长安常安。',
-    '2021 顺心顺利 平安喜乐',
-    '会有始料不及的运气，会有突如其来的惊喜，愿新年，胜旧年。',
-    '希望新的一年，三餐四季，温柔有趣。',
-    '岁岁常欢愉，年年皆胜意。',
-    '如果他们都祝你新年快乐，那么我祝你遍历山河仍觉得人间值得。',
-    '祝所求皆所愿，所行化坦途，多喜乐，长安宁。',
+    '凛冬散尽，星河长明，<br/>新的一年，万事顺遂。',
+    '愿新的一年，<br/>仍有阳光满路，<br/>温暖如初。',
+    '新的一年，万物更新，<br/>旧疾当愈，长安常安。',
+    '2021 <br/>顺心顺利 <br/>平安喜乐',
+    '会有始料不及的运气，<br/>会有突如其来的惊喜，<br/>愿新年，胜旧年。',
+    '希望新的一年，<br/>三餐四季，温柔有趣。',
+    '岁岁常欢愉，<br/>年年皆胜意。',
+    '如果他们都祝你新年快乐，<br/>那么我祝你遍历山河仍觉得人间值得。',
+    '祝所求皆所愿，<br/>所行化坦途，<br/>多喜乐，长安宁。',
 ]
 
 const body = document.querySelector('body');
@@ -352,7 +352,7 @@ const p = document.createElement('p');
 const span = document.createElement('span');
 const span1 = document.createElement('span');
 p.style.cssText = `font-family: 翩翩体-简;
-    font-size: 20px;user-select: none;position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #fff;`
+    font-size: 18px;user-select: none;position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #fff;`
 bg.style.cssText = `position: absolute; left: 0; top: 0;`;
 bg.style.cursor = 'url(https://s3.ax1x.com/2021/02/10/y0BCMq.png), auto';
 div.id = 'firework';
@@ -395,6 +395,9 @@ setTimeout(() => {
             i++;
             span.innerHTML = wish.slice(0, i + 1);
             if (wish[i] === '，' || wish[i] === ' ') {
+                if (wish[i + 1] === '<') {
+                    i += 5;
+                }
                 clearTimeout(timer);
                 timer = null;
                 setTimeout(() => {
