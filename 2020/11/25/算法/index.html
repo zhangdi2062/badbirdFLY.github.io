@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="收集一杯雾">
 <meta property="og:description" content="算法介绍 + LeetCode题目">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-04T15:03:50.938Z">
+<meta property="og:updated_time" content="2021-01-22T14:46:54.185Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法">
 <meta name="twitter:description" content="算法介绍 + LeetCode题目">
@@ -295,8 +295,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2021-01-04T23:03:50+08:00">
-              2021-01-04
+            <time title="Post modified" itemprop="dateModified" datetime="2021-01-22T22:46:54+08:00">
+              2021-01-22
             </time>
             
           </span>
@@ -338,7 +338,11 @@
 <h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>运行时间</p>
 <p><a href="https://blog.csdn.net/qq_41523096/article/details/82142747" target="_blank" rel="noopener">一套图 搞懂“时间复杂度”</a></p>
 <h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><p>占用空间</p>
-<h2 id="LeetCode题目"><a href="#LeetCode题目" class="headerlink" title="LeetCode题目"></a>LeetCode题目</h2><h3 id="350两数组交集"><a href="#350两数组交集" class="headerlink" title="350两数组交集"></a>350两数组交集</h3><h4 id="正常-map映射-“两个数组的交集元素，同时应与两个数组中出现的次数一致”"><a href="#正常-map映射-“两个数组的交集元素，同时应与两个数组中出现的次数一致”" class="headerlink" title="正常 map映射 “两个数组的交集元素，同时应与两个数组中出现的次数一致”"></a>正常 map映射 “两个数组的交集元素，同时应与两个数组中出现的次数一致”</h4><p>此题可以看成是一道传统的<bold>映射题（map映射）</bold>，为什么可以这样看呢，因为我们需找出两个数组的交集元素，同时应与两个数组中出现的次数一致。这样就导致了我们需要知道每个值出现的次数，所以映射关系就成了&lt;元素,出现次数&gt;。</p>
+<h2 id="LeetCode题目"><a href="#LeetCode题目" class="headerlink" title="LeetCode题目"></a>LeetCode题目</h2><h3 id="7整数反转"><a href="#7整数反转" class="headerlink" title="7整数反转"></a>7整数反转</h3><p>给你一个 32 位的有符号整数 x ，返回 x 中每位上的数字反转后的结果。</p>
+<p>如果反转后整数超过 32 位的有符号整数的范围 [−231,  231 − 1] ，就返回 0。</p>
+<p>假设环境不允许存储 64 位整数（有符号或无符号）。</p>
+<h4 id="取绝对值，整数变字符串变数组反转reverse方法，再判断边缘情况"><a href="#取绝对值，整数变字符串变数组反转reverse方法，再判断边缘情况" class="headerlink" title="取绝对值，整数变字符串变数组反转reverse方法，再判断边缘情况"></a>取绝对值，整数变字符串变数组反转reverse方法，再判断边缘情况</h4><h4 id="利用求余，每次取最后一位，构成反转后的整数-res-res-10-rest"><a href="#利用求余，每次取最后一位，构成反转后的整数-res-res-10-rest" class="headerlink" title="利用求余，每次取最后一位，构成反转后的整数 res = res * 10 + rest"></a>利用求余，每次取最后一位，构成反转后的整数 res = res * 10 + rest</h4><h3 id="9-回文数"><a href="#9-回文数" class="headerlink" title="9 回文数"></a>9 回文数</h3><p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。</p>
+<h4 id="整数变字符串-变数组反转reverse，判断是否相等"><a href="#整数变字符串-变数组反转reverse，判断是否相等" class="headerlink" title="整数变字符串 变数组反转reverse，判断是否相等"></a>整数变字符串 变数组反转reverse，判断是否相等</h4><h4 id="先判断边缘情况，比如负数绝对不是回文数，整数肯定不是回文数，再反转一半数字"><a href="#先判断边缘情况，比如负数绝对不是回文数，整数肯定不是回文数，再反转一半数字" class="headerlink" title="先判断边缘情况，比如负数绝对不是回文数，整数肯定不是回文数，再反转一半数字"></a>先判断边缘情况，比如负数绝对不是回文数，整数肯定不是回文数，再反转一半数字</h4><h3 id="350两数组交集"><a href="#350两数组交集" class="headerlink" title="350两数组交集"></a>350两数组交集</h3><h4 id="正常-map映射-“两个数组的交集元素，同时应与两个数组中出现的次数一致”"><a href="#正常-map映射-“两个数组的交集元素，同时应与两个数组中出现的次数一致”" class="headerlink" title="正常 map映射 “两个数组的交集元素，同时应与两个数组中出现的次数一致”"></a>正常 map映射 “两个数组的交集元素，同时应与两个数组中出现的次数一致”</h4><p>此题可以看成是一道传统的<bold>映射题（map映射）</bold>，为什么可以这样看呢，因为我们需找出两个数组的交集元素，同时应与两个数组中出现的次数一致。这样就导致了我们需要知道每个值出现的次数，所以映射关系就成了&lt;元素,出现次数&gt;。</p>
 <p>哈希表，利用map记录一个数组中各数值出现的次数，key是数值，value是出现次数，再遍历另一个数组，map中有这个key值则value减1</p>
 <h4 id="进阶-双指针-“给定的数组已经排好序”"><a href="#进阶-双指针-“给定的数组已经排好序”" class="headerlink" title="进阶 双指针 “给定的数组已经排好序”"></a>进阶 双指针 “给定的数组已经排好序”</h4><p>排序后，同时遍历两个数组，指针指向0，两者相等，指针各+1，不相等小的值指针+1，直到指针溢出</p>
 <h3 id="13最长公共前缀"><a href="#13最长公共前缀" class="headerlink" title="13最长公共前缀"></a>13最长公共前缀</h3><h4 id="横向扫描"><a href="#横向扫描" class="headerlink" title="横向扫描"></a>横向扫描</h4><p>先得到第一个和第二个元素的公共部分，公共部分再和第三个元素比较得到公共部分…</p>
@@ -378,8 +382,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/11/19/es6/" rel="next" title="es6">
-                <i class="fa fa-chevron-left"></i> es6
+              <a href="/2020/11/19/es6/" rel="next" title="ES6">
+                <i class="fa fa-chevron-left"></i> ES6
               </a>
             
           </div>
@@ -387,6 +391,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/01/03/CSS高斯模糊/" rel="prev" title="CSS高斯模糊">
+                CSS高斯模糊 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -452,7 +460,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">29</span>
+              <span class="site-state-item-count">31</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -469,7 +477,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -504,7 +512,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空间复杂度"><span class="nav-number">2.</span> <span class="nav-text">空间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LeetCode题目"><span class="nav-number">3.</span> <span class="nav-text">LeetCode题目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#350两数组交集"><span class="nav-number">3.1.</span> <span class="nav-text">350两数组交集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正常-map映射-“两个数组的交集元素，同时应与两个数组中出现的次数一致”"><span class="nav-number">3.1.1.</span> <span class="nav-text">正常 map映射 “两个数组的交集元素，同时应与两个数组中出现的次数一致”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进阶-双指针-“给定的数组已经排好序”"><span class="nav-number">3.1.2.</span> <span class="nav-text">进阶 双指针 “给定的数组已经排好序”</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13最长公共前缀"><span class="nav-number">3.2.</span> <span class="nav-text">13最长公共前缀</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#横向扫描"><span class="nav-number">3.2.1.</span> <span class="nav-text">横向扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#纵向扫描"><span class="nav-number">3.2.2.</span> <span class="nav-text">纵向扫描</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#122买卖股票的最佳时机"><span class="nav-number">3.3.</span> <span class="nav-text">122买卖股票的最佳时机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#图解"><span class="nav-number">3.3.1.</span> <span class="nav-text">图解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#945使数组唯一的最小增量"><span class="nav-number">3.4.</span> <span class="nav-text">945使数组唯一的最小增量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#暴力解法超时"><span class="nav-number">3.4.1.</span> <span class="nav-text">暴力解法超时</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#排序"><span class="nav-number">3.4.2.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计数"><span class="nav-number">3.4.3.</span> <span class="nav-text">计数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态规划"><span class="nav-number">4.</span> <span class="nav-text">动态规划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5"><span class="nav-number">4.1.</span> <span class="nav-text">5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#53最大子序和"><span class="nav-number">4.2.</span> <span class="nav-text">53最大子序和</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空间复杂度"><span class="nav-number">2.</span> <span class="nav-text">空间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LeetCode题目"><span class="nav-number">3.</span> <span class="nav-text">LeetCode题目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7整数反转"><span class="nav-number">3.1.</span> <span class="nav-text">7整数反转</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#取绝对值，整数变字符串变数组反转reverse方法，再判断边缘情况"><span class="nav-number">3.1.1.</span> <span class="nav-text">取绝对值，整数变字符串变数组反转reverse方法，再判断边缘情况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用求余，每次取最后一位，构成反转后的整数-res-res-10-rest"><span class="nav-number">3.1.2.</span> <span class="nav-text">利用求余，每次取最后一位，构成反转后的整数 res = res * 10 + rest</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-回文数"><span class="nav-number">3.2.</span> <span class="nav-text">9 回文数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#整数变字符串-变数组反转reverse，判断是否相等"><span class="nav-number">3.2.1.</span> <span class="nav-text">整数变字符串 变数组反转reverse，判断是否相等</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#先判断边缘情况，比如负数绝对不是回文数，整数肯定不是回文数，再反转一半数字"><span class="nav-number">3.2.2.</span> <span class="nav-text">先判断边缘情况，比如负数绝对不是回文数，整数肯定不是回文数，再反转一半数字</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#350两数组交集"><span class="nav-number">3.3.</span> <span class="nav-text">350两数组交集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正常-map映射-“两个数组的交集元素，同时应与两个数组中出现的次数一致”"><span class="nav-number">3.3.1.</span> <span class="nav-text">正常 map映射 “两个数组的交集元素，同时应与两个数组中出现的次数一致”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进阶-双指针-“给定的数组已经排好序”"><span class="nav-number">3.3.2.</span> <span class="nav-text">进阶 双指针 “给定的数组已经排好序”</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13最长公共前缀"><span class="nav-number">3.4.</span> <span class="nav-text">13最长公共前缀</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#横向扫描"><span class="nav-number">3.4.1.</span> <span class="nav-text">横向扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#纵向扫描"><span class="nav-number">3.4.2.</span> <span class="nav-text">纵向扫描</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#122买卖股票的最佳时机"><span class="nav-number">3.5.</span> <span class="nav-text">122买卖股票的最佳时机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#图解"><span class="nav-number">3.5.1.</span> <span class="nav-text">图解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#945使数组唯一的最小增量"><span class="nav-number">3.6.</span> <span class="nav-text">945使数组唯一的最小增量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#暴力解法超时"><span class="nav-number">3.6.1.</span> <span class="nav-text">暴力解法超时</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#排序"><span class="nav-number">3.6.2.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计数"><span class="nav-number">3.6.3.</span> <span class="nav-text">计数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态规划"><span class="nav-number">4.</span> <span class="nav-text">动态规划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5"><span class="nav-number">4.1.</span> <span class="nav-text">5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#53最大子序和"><span class="nav-number">4.2.</span> <span class="nav-text">53最大子序和</span></a></li></ol></li></ol></div>
             
 
           </div>

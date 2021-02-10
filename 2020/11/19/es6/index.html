@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="箭头函数12345678const a = fn =&amp;gt; val =&amp;gt; fn(val);// 多重箭头表示内嵌函数const a = function (fn) &amp;#123;    return function (val) &amp;#123;        return fn(val);    &amp;#125;&amp;#125;  ?. ??">
+<meta name="description" content="主要介绍易错点">
 <meta name="keywords" content="前端,学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="es6">
+<meta property="og:title" content="ES6">
 <meta property="og:url" content="https://badbirdfly.github.io/2020/11/19/es6/index.html">
 <meta property="og:site_name" content="收集一杯雾">
-<meta property="og:description" content="箭头函数12345678const a = fn =&amp;gt; val =&amp;gt; fn(val);// 多重箭头表示内嵌函数const a = function (fn) &amp;#123;    return function (val) &amp;#123;        return fn(val);    &amp;#125;&amp;#125;  ?. ??">
+<meta property="og:description" content="主要介绍易错点">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-19T14:47:33.641Z">
+<meta property="og:updated_time" content="2021-02-10T02:38:16.081Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="es6">
-<meta name="twitter:description" content="箭头函数12345678const a = fn =&amp;gt; val =&amp;gt; fn(val);// 多重箭头表示内嵌函数const a = function (fn) &amp;#123;    return function (val) &amp;#123;        return fn(val);    &amp;#125;&amp;#125;  ?. ??">
+<meta name="twitter:title" content="ES6">
+<meta name="twitter:description" content="主要介绍易错点">
 
 
 
@@ -129,7 +129,7 @@
 
 
 
-  <title> es6 | 收集一杯雾 </title>
+  <title> ES6 | 收集一杯雾 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -274,7 +274,7 @@
             
             
               
-                es6
+                ES6
               
             
           </h1>
@@ -295,8 +295,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2021-01-19T22:47:33+08:00">
-              2021-01-19
+            <time title="Post modified" itemprop="dateModified" datetime="2021-02-10T10:38:16+08:00">
+              2021-02-10
             </time>
             
           </span>
@@ -332,10 +332,17 @@
       
 
       
-        <h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="function"><span class="params">fn</span> =&gt;</span> val =&gt; fn(val);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 多重箭头表示内嵌函数</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> fn(val);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>主要介绍易错点</p>
+<a id="more"></a>
 
-<p><code>?.</code></p>
-<p><code>??</code></p>
+<h2 id="函数的扩展"><a href="#函数的扩展" class="headerlink" title="函数的扩展"></a>函数的扩展</h2><h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="function"><span class="params">fn</span> =&gt;</span> val =&gt; fn(val);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 多重箭头表示内嵌函数</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> fn(val);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h2><p><code>?.</code>  </p>
+<p><code>obj?.val</code> 表示 <code>obj &amp;&amp; obj.val</code>,减少判断条件，减少代码量 </p>
+<p><code>??</code> </p>
+<p><code>a = obj ?? {}</code> 表示 obj为null或者undefined时结果是{}</p>
+<p>与<code>||</code>相比少了 为0，false，’’的情况</p>
+<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><p>见 《手撕Promise》文章</p>
 
       
     </div>
@@ -440,7 +447,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">29</span>
+              <span class="site-state-item-count">31</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -457,7 +464,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -492,7 +499,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#箭头函数"><span class="nav-number">1.</span> <span class="nav-text">箭头函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的扩展"><span class="nav-number">1.</span> <span class="nav-text">函数的扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#箭头函数"><span class="nav-number">1.1.</span> <span class="nav-text">箭头函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#符号"><span class="nav-number">2.</span> <span class="nav-text">符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise"><span class="nav-number">3.</span> <span class="nav-text">Promise</span></a></li></ol></div>
             
 
           </div>
