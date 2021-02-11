@@ -296,7 +296,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2021-02-11T12:14:00+08:00">
+            <time title="Post modified" itemprop="dateModified" datetime="2021-02-11T12:38:56+08:00">
               2021-02-11
             </time>
             
@@ -383,14 +383,7 @@ div.append(frame);
 body.append(div);
 
 
-// 打字效果
-function typing() {
-    const len = arr.length;
-    const random = Math.floor(Math.random() * len);
-    const wish = arr[random];
-    let timer = null;
-    let i = 0;
-    start();
+function cursor() {
     span1.innerText = '|';
     let cursorTimer = null;
     let opc = 1;
@@ -398,6 +391,18 @@ function typing() {
         opc = +!opc;
         span1.style.opacity = opc;
     }, 500);
+
+}
+// 打字效果
+function typing() {
+
+    const len = arr.length;
+    const random = Math.floor(Math.random() * len);
+    const wish = arr[random];
+    let timer = null;
+    let i = 0;
+    start();
+
     function start() {
         timer = setInterval(() => {
             if (i > wish.length) {
@@ -436,9 +441,11 @@ function typing() {
 }
 setTimeout(() => {
     frame.style.display = 'none';
-    typing();
-}, 1500);
-
+    cursor();
+    setTimeout(() => {
+        typing();
+    }, 1500);
+}, 1000);
 
 
 

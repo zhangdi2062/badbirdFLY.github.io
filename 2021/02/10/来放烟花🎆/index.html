@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="收集一杯雾">
 <meta property="og:description" content="const arr = [     &apos;凛冬散尽，星河长明，新的一年，万事顺遂。&apos;,     &apos;愿新的一年，仍有阳光满路，温暖如初。&apos;,     &apos;新的一年，万物更新，旧疾当愈，长安常安。&apos;,     &apos;2021 顺心顺利 平安喜乐&apos;,     &apos;会有始料不及的运气，会有突如其来的惊喜，愿新年，胜旧年。&apos;,     &apos;希望新的一年，三餐四季，温柔有趣。&apos;,     &apos;岁岁常欢愉，年年皆胜意。&apos;,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-02-11T04:14:00.870Z">
+<meta property="og:updated_time" content="2021-02-11T04:38:56.362Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="来放烟花🎆">
 <meta name="twitter:description" content="const arr = [     &apos;凛冬散尽，星河长明，新的一年，万事顺遂。&apos;,     &apos;愿新的一年，仍有阳光满路，温暖如初。&apos;,     &apos;新的一年，万物更新，旧疾当愈，长安常安。&apos;,     &apos;2021 顺心顺利 平安喜乐&apos;,     &apos;会有始料不及的运气，会有突如其来的惊喜，愿新年，胜旧年。&apos;,     &apos;希望新的一年，三餐四季，温柔有趣。&apos;,     &apos;岁岁常欢愉，年年皆胜意。&apos;,">
@@ -295,7 +295,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2021-02-11T12:14:00+08:00">
+            <time title="Post modified" itemprop="dateModified" datetime="2021-02-11T12:38:56+08:00">
               2021-02-11
             </time>
             
@@ -385,14 +385,7 @@ div.append(frame);
 body.append(div);
 
 
-// 打字效果
-function typing() {
-    const len = arr.length;
-    const random = Math.floor(Math.random() * len);
-    const wish = arr[random];
-    let timer = null;
-    let i = 0;
-    start();
+function cursor() {
     span1.innerText = '|';
     let cursorTimer = null;
     let opc = 1;
@@ -400,6 +393,18 @@ function typing() {
         opc = +!opc;
         span1.style.opacity = opc;
     }, 500);
+
+}
+// 打字效果
+function typing() {
+
+    const len = arr.length;
+    const random = Math.floor(Math.random() * len);
+    const wish = arr[random];
+    let timer = null;
+    let i = 0;
+    start();
+
     function start() {
         timer = setInterval(() => {
             if (i > wish.length) {
@@ -438,9 +443,11 @@ function typing() {
 }
 setTimeout(() => {
     frame.style.display = 'none';
-    typing();
-}, 1500);
-
+    cursor();
+    setTimeout(() => {
+        typing();
+    }, 1500);
+}, 1000);
 
 
 
