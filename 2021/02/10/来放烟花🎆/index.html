@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="收集一杯雾">
 <meta property="og:description" content="const arr = [     &apos;凛冬散尽，星河长明，新的一年，万事顺遂。&apos;,     &apos;愿新的一年，仍有阳光满路，温暖如初。&apos;,     &apos;新的一年，万物更新，旧疾当愈，长安常安。&apos;,     &apos;2021 顺心顺利 平安喜乐&apos;,     &apos;会有始料不及的运气，会有突如其来的惊喜，愿新年，胜旧年。&apos;,     &apos;希望新的一年，三餐四季，温柔有趣。&apos;,     &apos;岁岁常欢愉，年年皆胜意。&apos;,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-02-10T16:23:08.062Z">
+<meta property="og:updated_time" content="2021-02-11T02:15:30.948Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="来放烟花🎆">
 <meta name="twitter:description" content="const arr = [     &apos;凛冬散尽，星河长明，新的一年，万事顺遂。&apos;,     &apos;愿新的一年，仍有阳光满路，温暖如初。&apos;,     &apos;新的一年，万物更新，旧疾当愈，长安常安。&apos;,     &apos;2021 顺心顺利 平安喜乐&apos;,     &apos;会有始料不及的运气，会有突如其来的惊喜，愿新年，胜旧年。&apos;,     &apos;希望新的一年，三餐四季，温柔有趣。&apos;,     &apos;岁岁常欢愉，年年皆胜意。&apos;,">
@@ -295,7 +295,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2021-02-11T00:23:08+08:00">
+            <time title="Post modified" itemprop="dateModified" datetime="2021-02-11T10:15:30+08:00">
               2021-02-11
             </time>
             
@@ -343,6 +343,7 @@ const arr = [
     '岁岁常欢愉，<br/>年年皆胜意。',
     '如果他们都祝你新年快乐，<br/>那么我祝你遍历山河仍觉得人间值得。',
     '祝所求皆所愿，<br/>所行化坦途，<br/>多喜乐，长安宁。',
+    '哇你超幸运，<br/>来找我领红包。',
 ]
 
 const body = document.querySelector('body');
@@ -360,15 +361,31 @@ bg.style.cursor = 'url(https://s3.ax1x.com/2021/02/10/y0BCMq.png), auto';
 div.id = 'firework';
 div.style.cssText = `width: 100%; height: 100%; position: absolute; top:0; left: 0; z-index: 9999`
 
+// 背景音乐
+// const audio = document.createElement('audio');
+// audio.src = 'https://y.music.163.com/m/song/1414870913/?userid=64898878&app_version=8.1.10 ';
+// audio.controls = true;
+// audio.autoplay = true;
+// audio.style.display = 'none';
+
+
+
+const frame = document.createElement('iframe');
+frame.src = 'https://res.wx.qq.com/voice/getvoice?mediaid=MzkxNzIxMTY5MV8xMDAwMDAxMjQ=';
+
 div.append(fire);
 div.append(bg);
 p.append(span);
 p.append(span1);
 div.append(p);
+// div.append(audio)
+div.append(frame);
 body.append(div);
 
 // 打字效果
 setTimeout(() => {
+frame.style.display = 'none';
+
     const len = arr.length;
     const random = Math.floor(Math.random() * len);
     const wish = arr[random];
@@ -392,7 +409,7 @@ setTimeout(() => {
                 setTimeout(() => {
                     span1.style.opacity = 0;
                     clearTimeout(cursorTimer);
-                }, 1000);
+                }, 2000);
             }
             i++;
             span.innerHTML = wish.slice(0, i + 1);
