@@ -296,7 +296,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2021-02-11T11:01:12+08:00">
+            <time title="Post modified" itemprop="dateModified" datetime="2021-02-11T11:45:17+08:00">
               2021-02-11
             </time>
             
@@ -343,10 +343,8 @@ const arr = [
     '祝所求皆所愿，<br/>所行化坦途，<br/>多喜乐，长安宁。',
     '哇你超幸运，<br/>来找我领红包。',
 ]
-const href1 = decodeURI(window.location.href);
-    console.log('href: ', href1);
 const body = document.querySelector('body');
-body.style.cursor = 'url(https://imgchr.com/i/y0wouV)';
+body.style.cursor = 'url(https://s3.ax1x.com/2021/02/10/y0BCMq.png), auto';
 const div = document.createElement('div');
 const fire = document.createElement('canvas');
 const bg = document.createElement('canvas');
@@ -371,7 +369,7 @@ div.style.cssText = `width: 100%; height: 100%; position: absolute; top:0; left:
 
 const frame = document.createElement('iframe');
 // frame.src = 'https://res.wx.qq.com/voice/getvoice?mediaid=MzkxNzIxMTY5MV8xMDAwMDAxMjQ=';
-frame.src = '//music.163.com/outchain/player?type=2&id=1414870913&auto=1&height=32';
+frame.src = '//music.163.com/outchain/player?type=2&id=1346758452&auto=1&height=32';
 div.append(fire);
 div.append(bg);
 p.append(span);
@@ -382,9 +380,7 @@ div.append(frame);
 body.append(div);
 
 // 打字效果
-setTimeout(() => {
-frame.style.display = 'none';
-
+function typing() {
     const len = arr.length;
     const random = Math.floor(Math.random() * len);
     const wish = arr[random];
@@ -408,7 +404,14 @@ frame.style.display = 'none';
                 setTimeout(() => {
                     span1.style.opacity = 0;
                     clearTimeout(cursorTimer);
+
+                    // 重新
+                    setTimeout(() => {
+                        i = 0;
+                        typing();
+                    }, 5000);
                 }, 2000);
+
             }
             i++;
             span.innerHTML = wish.slice(0, i + 1);
@@ -424,6 +427,10 @@ frame.style.display = 'none';
             }
         }, 250);
     }
+}
+setTimeout(() => {
+    frame.style.display = 'none';
+    typing();
 }, 1500);
 
 
@@ -431,7 +438,6 @@ frame.style.display = 'none';
 
 if( ('onhashchange' in window) && ((typeof document.documentMode==='undefined') || document.documentMode==8)) {
     const href = decodeURI(window.location.href);
-    console.log('href: ', href);
     const idx = href.indexOf('来放烟花');
     if (idx === -1) {
         div.remove();
@@ -447,7 +453,6 @@ var RENDERER = {
         var x = e.clientX;
         var y = e.clientY;
 
-        // drawFireworks(x,y);
         this.fireworks.push(new FIREWORK(this.width, this.height, this, x, y));
     },
 
