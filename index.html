@@ -296,7 +296,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2021-02-11T10:15:30+08:00">
+            <time title="Post modified" itemprop="dateModified" datetime="2021-02-11T11:01:12+08:00">
               2021-02-11
             </time>
             
@@ -343,7 +343,8 @@ const arr = [
     '祝所求皆所愿，<br/>所行化坦途，<br/>多喜乐，长安宁。',
     '哇你超幸运，<br/>来找我领红包。',
 ]
-
+const href1 = decodeURI(window.location.href);
+    console.log('href: ', href1);
 const body = document.querySelector('body');
 body.style.cursor = 'url(https://imgchr.com/i/y0wouV)';
 const div = document.createElement('div');
@@ -357,7 +358,7 @@ p.style.cssText = `font-family: 翩翩体-简;
 bg.style.cssText = `position: absolute; left: 0; top: 0;`;
 bg.style.cursor = 'url(https://s3.ax1x.com/2021/02/10/y0BCMq.png), auto';
 div.id = 'firework';
-div.style.cssText = `width: 100%; height: 100%; position: absolute; top:0; left: 0; z-index: 9999`
+div.style.cssText = `width: 100%; height: 100%; position: absolute; top:0; left: 0; z-index: 9999; overflow:hidden;`
 
 // 背景音乐
 // const audio = document.createElement('audio');
@@ -369,8 +370,8 @@ div.style.cssText = `width: 100%; height: 100%; position: absolute; top:0; left:
 
 
 const frame = document.createElement('iframe');
-frame.src = 'https://res.wx.qq.com/voice/getvoice?mediaid=MzkxNzIxMTY5MV8xMDAwMDAxMjQ=';
-
+// frame.src = 'https://res.wx.qq.com/voice/getvoice?mediaid=MzkxNzIxMTY5MV8xMDAwMDAxMjQ=';
+frame.src = '//music.163.com/outchain/player?type=2&id=1414870913&auto=1&height=32';
 div.append(fire);
 div.append(bg);
 p.append(span);
@@ -430,6 +431,7 @@ frame.style.display = 'none';
 
 if( ('onhashchange' in window) && ((typeof document.documentMode==='undefined') || document.documentMode==8)) {
     const href = decodeURI(window.location.href);
+    console.log('href: ', href);
     const idx = href.indexOf('来放烟花');
     if (idx === -1) {
         div.remove();
