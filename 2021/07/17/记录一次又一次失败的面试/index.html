@@ -1,0 +1,749 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="面试,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="第一次面试 某教育机构面试的第一家是以电话沟通的形式，就被教育了，整体感受就是这些题我都知道，但就是说不出深入的，只能说明还是没有真正掌握 而且她问话节奏好快，答完没有反馈接着问下一个，不到半个小时就问完了，再次哀嚎自己太菜了 从面试的第一题开始，好好深入1. var let const的区别用法var 和 let 使用上没有区别，const声明只读的常量，不能改变，并不是值不能改变，而是指向的内">
+<meta name="keywords" content="面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录一次又一次失败的面试">
+<meta property="og:url" content="https://badbirdfly.github.io/2021/07/17/记录一次又一次失败的面试/index.html">
+<meta property="og:site_name" content="收集一杯雾">
+<meta property="og:description" content="第一次面试 某教育机构面试的第一家是以电话沟通的形式，就被教育了，整体感受就是这些题我都知道，但就是说不出深入的，只能说明还是没有真正掌握 而且她问话节奏好快，答完没有反馈接着问下一个，不到半个小时就问完了，再次哀嚎自己太菜了 从面试的第一题开始，好好深入1. var let const的区别用法var 和 let 使用上没有区别，const声明只读的常量，不能改变，并不是值不能改变，而是指向的内">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-08-02T12:46:28.613Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="记录一次又一次失败的面试">
+<meta name="twitter:description" content="第一次面试 某教育机构面试的第一家是以电话沟通的形式，就被教育了，整体感受就是这些题我都知道，但就是说不出深入的，只能说明还是没有真正掌握 而且她问话节奏好快，答完没有反馈接着问下一个，不到半个小时就问完了，再次哀嚎自己太菜了 从面试的第一题开始，好好深入1. var let const的区别用法var 和 let 使用上没有区别，const声明只读的常量，不能改变，并不是值不能改变，而是指向的内">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://badbirdfly.github.io/2021/07/17/记录一次又一次失败的面试/">
+
+
+
+
+
+  <title> 记录一次又一次失败的面试 | 收集一杯雾 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">收集一杯雾</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">学习！</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://badbirdfly.github.io/2021/07/17/记录一次又一次失败的面试/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Zhang Di">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="收集一杯雾">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="收集一杯雾" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                记录一次又一次失败的面试
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-07-17T20:39:19+08:00">
+              2021-07-17
+            </time>
+
+            &nbsp;|&nbsp;
+
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-check-o"></i>
+            </span>
+            <time title="Post modified" itemprop="dateModified" datetime="2021-08-02T20:46:28+08:00">
+              2021-08-02
+            </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+          
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="第一次面试-某教育机构"><a href="#第一次面试-某教育机构" class="headerlink" title="第一次面试 某教育机构"></a>第一次面试 某教育机构</h2><p>面试的第一家是以电话沟通的形式，就被教育了，整体感受就是这些题我都知道，但就是说不出深入的，只能说明还是没有真正掌握</p>
+<p>而且她问话节奏好快，答完没有反馈接着问下一个，不到半个小时就问完了，再次哀嚎自己太菜了</p>
+<h3 id="从面试的第一题开始，好好深入"><a href="#从面试的第一题开始，好好深入" class="headerlink" title="从面试的第一题开始，好好深入"></a>从面试的第一题开始，好好深入</h3><h4 id="1-var-let-const的区别"><a href="#1-var-let-const的区别" class="headerlink" title="1. var let const的区别"></a>1. var let const的区别</h4><h5 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h5><p>var 和 let 使用上没有区别，const声明只读的常量，不能改变，并不是值不能改变，而是指向的内存地址不能变</p>
+<p>var 在全局范围内生效，在声明前可以获取，可以重复声明，<br>let 和 const 在块级作用域内生效，在声明前不能获取，不能重复声明</p>
+<h5 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h5><p>var 创建和初始化都提升了，所以在赋值前可以访问到 得到undefined<br>let 和 const 只在创建过程提升，初始化不提升，所以会有暂时性死区</p>
+<h5 id="内存分配"><a href="#内存分配" class="headerlink" title="内存分配"></a>内存分配</h5><p>var 会直接在栈内存中预分配内存空间<br>let 和 const 不会预分配内存空间，并在声明时检查之前是否有重复声明，有的话报错</p>
+<h4 id="2-bind-call-apply的区别"><a href="#2-bind-call-apply的区别" class="headerlink" title="2. bind call apply的区别"></a>2. bind call apply的区别</h4><h5 id="共同点"><a href="#共同点" class="headerlink" title="共同点"></a>共同点</h5><p>都是修改函数体的this指向</p>
+<h5 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h5><p>bind不会立即调用，而是会返回一个新函数</p>
+<p>call和apply会立即调用，但所传参数不同<br>apply第一个参数是this指向，第二个参数是参数数组<br>call第一个参数是this指向，第二个及以后参数是挨个列举</p>
+<p>性能上call比apply好一些，因为参数是数组的话函数内部也要解构一遍</p>
+<h4 id="3-数组去重"><a href="#3-数组去重" class="headerlink" title="3. 数组去重"></a>3. 数组去重</h4><h5 id="ES6-Set"><a href="#ES6-Set" class="headerlink" title="ES6 Set"></a>ES6 Set</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [...new <span class="built_in">Set</span>(arr)];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="ES6-Map-类似键值对方式"><a href="#ES6-Map-类似键值对方式" class="headerlink" title="ES6 Map 类似键值对方式"></a>ES6 Map 类似键值对方式</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">    <span class="keyword">return</span> arr.filter(<span class="function">(<span class="params">item</span>) =&gt;</span> !map.has(item) &amp;&amp; map.set(item, <span class="number">1</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="ES5-reduce-功能很强大"><a href="#ES5-reduce-功能很强大" class="headerlink" title="ES5 reduce 功能很强大"></a>ES5 reduce 功能很强大</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distince</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 初始值或上一次函数的返回值 当前值 当前索引 原数组  赋初始值</span></span><br><span class="line">    arr.reduce(<span class="function">(<span class="params">prev, cur, index, origin</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (!prev.includes(cur)) <span class="keyword">return</span> prev.push(cur);</span><br><span class="line">        <span class="keyword">return</span> prev;</span><br><span class="line">    &#125;, [])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="filter-indexOf"><a href="#filter-indexOf" class="headerlink" title="filter indexOf"></a>filter indexOf</h5><p>利用indexOf返回第一次满足条件的索引值的性质，将重复的值过滤掉</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> arr.filter(<span class="function">(<span class="params">item, index</span>) =&gt;</span> arr.indexOf(item) === index);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h5><p>V8引擎 的 sort() 方法在数组长度小于等于10的情况下，会使用插入排序，大于10的情况下会使用快速排序</p>
+<p>先排序，再比较相邻元素是否相同</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    arr.sort();</span><br><span class="line">    <span class="keyword">const</span> temp = [];</span><br><span class="line">    arr.forEach(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (index &amp;&amp; item !== arr[index - <span class="number">1</span>]) &#123;</span><br><span class="line">            temp.push(item);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="双重for循环"><a href="#双重for循环" class="headerlink" title="双重for循环"></a>双重for循环</h5><p>不推荐使用，因为时间复杂度是O(n^2);</p>
+<h4 id="类数组转为数组的方式"><a href="#类数组转为数组的方式" class="headerlink" title="类数组转为数组的方式"></a>类数组转为数组的方式</h4><h4 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h4><p>js代码在执行过程中，除了依靠函数调用栈来处理调用顺序时，还依靠任务队列来执行其他的一些代码，整个执行过程，称为事件循环</p>
+<p>事件循环是js实现异步的一种方法<br>事件循环只有一个，但任务队列可以有多个，任务队列又分为宏任务和微任务</p>
+<h5 id="宏任务大概包括："><a href="#宏任务大概包括：" class="headerlink" title="宏任务大概包括："></a>宏任务大概包括：</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">script(整体代码)</span><br><span class="line">setTimeout</span><br><span class="line">setInterval</span><br><span class="line">setImmediate</span><br><span class="line">UI render</span><br><span class="line">I/O</span><br></pre></td></tr></table></figure>
+
+<h5 id="微任务大概包括"><a href="#微任务大概包括" class="headerlink" title="微任务大概包括"></a>微任务大概包括</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">process.nextTick</span><br><span class="line"><span class="built_in">Promise</span>.then</span><br><span class="line">Async/Await</span><br><span class="line">MutationObserver 监听dom树变化的</span><br></pre></td></tr></table></figure>
+
+<h5 id="执行过程"><a href="#执行过程" class="headerlink" title="执行过程"></a>执行过程</h5><p>执行宏任务，然后执行该宏任务产生的微任务，如果微任务在执行过程中产生了新的微任务，则继续执行微任务，微任务执行完毕后，再回到宏任务中进行下一轮循环</p>
+<h5 id="async-await执行顺序"><a href="#async-await执行顺序" class="headerlink" title="async/await执行顺序"></a>async/await执行顺序</h5><p>await 后面的函数执行完后，会产生一个微任务，这个微任务会直接跳出async函数，执行其他代码，然后再执行</p>
+<h4 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h4><p>promise是异步编程的解决方案，是一个构造函数</p>
+<h4 id="vue生命周期"><a href="#vue生命周期" class="headerlink" title="vue生命周期"></a>vue生命周期</h4><h4 id="vue-哈希模式和历史模式"><a href="#vue-哈希模式和历史模式" class="headerlink" title="vue 哈希模式和历史模式"></a>vue 哈希模式和历史模式</h4><h4 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h4><h4 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h4><h4 id="回流和重绘"><a href="#回流和重绘" class="headerlink" title="回流和重绘"></a>回流和重绘</h4><h4 id="em和rem的区别"><a href="#em和rem的区别" class="headerlink" title="em和rem的区别"></a>em和rem的区别</h4><h4 id="http状态码"><a href="#http状态码" class="headerlink" title="http状态码"></a>http状态码</h4><h4 id="协商缓存和强缓存"><a href="#协商缓存和强缓存" class="headerlink" title="协商缓存和强缓存"></a>协商缓存和强缓存</h4><h2 id="其他家"><a href="#其他家" class="headerlink" title="其他家"></a>其他家</h2><h4 id="怎么实现一个迭代器"><a href="#怎么实现一个迭代器" class="headerlink" title="怎么实现一个迭代器"></a>怎么实现一个迭代器</h4><p>迭代器是一个接口，为不同的数据提供统一的访问机制</p>
+<p>它有一个next()方法，每次调用都会返回数据结构当前成员的信息</p>
+<p>即返回一个包含value和done属性的对象，value当前成员的值，done表示遍历是否结束，done为true时，value为undefined</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        next() &#123;</span><br><span class="line">            <span class="keyword">return</span> i &gt;= arr.length ? &#123;<span class="attr">done</span>: <span class="literal">true</span>, <span class="attr">value</span>: <span class="literal">undefined</span>&#125; : &#123;<span class="attr">done</span>: <span class="literal">false</span>, <span class="attr">value</span>: arr[i++]&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="手写new"><a href="#手写new" class="headerlink" title="手写new"></a>手写new</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myNew</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// const obj = &#123;&#125;;</span></span><br><span class="line">    <span class="keyword">const</span> [fn, ...rest] = <span class="built_in">arguments</span>;</span><br><span class="line">    <span class="comment">// obj.__proto__ = fn.prototype;</span></span><br><span class="line">    <span class="keyword">const</span> obj = <span class="built_in">Object</span>.create(fn.prototype);</span><br><span class="line">    <span class="keyword">const</span> res = fn.call(obj, ...rest);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">typeof</span> res === <span class="string">'object'</span> ? res || obj : obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="ES6的新属性"><a href="#ES6的新属性" class="headerlink" title="ES6的新属性"></a>ES6的新属性</h4><p>let const<br>变量的解构赋值，很有用<br>字符串的扩展</p>
+<h4 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h4><p>跨域是违反同源策略的约定，因为同源策略是浏览器最核心也最基本的安全功能，如果缺少同源策略，网站很容易收到XSS和CSRF的攻击</p>
+<h4 id="http2的新特性"><a href="#http2的新特性" class="headerlink" title="http2的新特性"></a>http2的新特性</h4><h2 id="国新"><a href="#国新" class="headerlink" title="国新"></a>国新</h2><ol>
+<li><p>适配器模式</p>
+</li>
+<li><p>flex</p>
+</li>
+<li><p>垂直居中</p>
+</li>
+</ol>
+<h2 id="用友"><a href="#用友" class="headerlink" title="用友"></a>用友</h2><p>BFC / call apply bind / flex</p>
+<ol>
+<li>for forEach map for in filter的效率比较</li>
+</ol>
+<p>在10万以上，for循环效率最高，&gt; filter &gt; forEach 约== map &gt; for in</p>
+<ol start="2">
+<li>rem em vh</li>
+</ol>
+<p>rem 根元素设置font-size: 10px 即10px = 1rem 其他元素都跟着变化</p>
+<p>em 如果font-size是px，那么其他属性根据当前font-size来计算大小，如果font-size是em则根据父元素计算大小</p>
+<ol start="3">
+<li>arguments用call转化成数组</li>
+</ol>
+<p><code>arguments = Array.prototype.slice.call(arguments)</code></p>
+<p>或者</p>
+<p><code>arguments = [].slice.call(arguments)</code></p>
+<ol start="4">
+<li>string不是对象为什么可以调length</li>
+</ol>
+<p>包装对象</p>
+<p>对于基本类型（number string boolean），当我们在读取这三种基本类型的值时，后台会创建对应的包装类型的实例，然后调用实例指定的方法，调用完就销毁，由于这样短暂的生命周期导致我们不能添加自己的属性和方法</p>
+<ol start="5">
+<li><p>slice</p>
+</li>
+<li><p>多久能学会react</p>
+</li>
+<li><p>webpack</p>
+</li>
+</ol>
+<p>用过哪些loader</p>
+<p>怎么转换成babel的</p>
+<ol start="8">
+<li>数组随意变换位置</li>
+</ol>
+<h3 id="易企秀"><a href="#易企秀" class="headerlink" title="易企秀"></a>易企秀</h3><ol>
+<li><p>浏览器缓存，如何区别</p>
+</li>
+<li><p>深浅拷贝 详细</p>
+</li>
+<li><p>vue组件通信</p>
+</li>
+<li><p>性能和体积方式优化</p>
+</li>
+<li><p>多个回调依次执行</p>
+</li>
+<li><p>sourceMap有什么用，怎么查看</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/07/06/理解原型与原型链/" rel="next" title="理解原型与原型链">
+                <i class="fa fa-chevron-left"></i> 理解原型与原型链
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Zhang Di">
+          <p class="site-author-name" itemprop="name">Zhang Di</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">37</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一次面试-某教育机构"><span class="nav-number">1.</span> <span class="nav-text">第一次面试 某教育机构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#从面试的第一题开始，好好深入"><span class="nav-number">1.1.</span> <span class="nav-text">从面试的第一题开始，好好深入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-var-let-const的区别"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. var let const的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用法"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#变量提升"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">变量提升</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内存分配"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">内存分配</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-bind-call-apply的区别"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. bind call apply的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#共同点"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">共同点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#不同点"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">不同点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-数组去重"><span class="nav-number">1.1.3.</span> <span class="nav-text">3. 数组去重</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ES6-Set"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">ES6 Set</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ES6-Map-类似键值对方式"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">ES6 Map 类似键值对方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ES5-reduce-功能很强大"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">ES5 reduce 功能很强大</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#filter-indexOf"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">filter indexOf</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sort"><span class="nav-number">1.1.3.5.</span> <span class="nav-text">sort</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#双重for循环"><span class="nav-number">1.1.3.6.</span> <span class="nav-text">双重for循环</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类数组转为数组的方式"><span class="nav-number">1.1.4.</span> <span class="nav-text">类数组转为数组的方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件循环"><span class="nav-number">1.1.5.</span> <span class="nav-text">事件循环</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#宏任务大概包括："><span class="nav-number">1.1.5.1.</span> <span class="nav-text">宏任务大概包括：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#微任务大概包括"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">微任务大概包括</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#执行过程"><span class="nav-number">1.1.5.3.</span> <span class="nav-text">执行过程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#async-await执行顺序"><span class="nav-number">1.1.5.4.</span> <span class="nav-text">async/await执行顺序</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#promise"><span class="nav-number">1.1.6.</span> <span class="nav-text">promise</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vue生命周期"><span class="nav-number">1.1.7.</span> <span class="nav-text">vue生命周期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vue-哈希模式和历史模式"><span class="nav-number">1.1.8.</span> <span class="nav-text">vue 哈希模式和历史模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由"><span class="nav-number">1.1.9.</span> <span class="nav-text">路由</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex"><span class="nav-number">1.1.10.</span> <span class="nav-text">flex</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回流和重绘"><span class="nav-number">1.1.11.</span> <span class="nav-text">回流和重绘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#em和rem的区别"><span class="nav-number">1.1.12.</span> <span class="nav-text">em和rem的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#http状态码"><span class="nav-number">1.1.13.</span> <span class="nav-text">http状态码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#协商缓存和强缓存"><span class="nav-number">1.1.14.</span> <span class="nav-text">协商缓存和强缓存</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他家"><span class="nav-number">2.</span> <span class="nav-text">其他家</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#怎么实现一个迭代器"><span class="nav-number">2.0.1.</span> <span class="nav-text">怎么实现一个迭代器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#手写new"><span class="nav-number">2.0.2.</span> <span class="nav-text">手写new</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6的新属性"><span class="nav-number">2.0.3.</span> <span class="nav-text">ES6的新属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域"><span class="nav-number">2.0.4.</span> <span class="nav-text">跨域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#http2的新特性"><span class="nav-number">2.0.5.</span> <span class="nav-text">http2的新特性</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#国新"><span class="nav-number">3.</span> <span class="nav-text">国新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用友"><span class="nav-number">4.</span> <span class="nav-text">用友</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#易企秀"><span class="nav-number">4.1.</span> <span class="nav-text">易企秀</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang Di</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+
+</body>
+</html>
