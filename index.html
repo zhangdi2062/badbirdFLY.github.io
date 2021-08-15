@@ -248,6 +248,126 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://badbirdfly.github.io/2021/08/14/js工具库/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Zhang Di">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="收集一杯雾">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="收集一杯雾" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2021/08/14/js工具库/" itemprop="url">
+                  js工具库
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-08-14T08:18:57+08:00">
+              2021-08-14
+            </time>
+
+            &nbsp;|&nbsp;
+
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-check-o"></i>
+            </span>
+            <time title="Post modified" itemprop="dateModified" datetime="2021-08-16T07:41:35+08:00">
+              2021-08-16
+            </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="判断数据类型"><a href="#判断数据类型" class="headerlink" title="判断数据类型"></a>判断数据类型</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 利用高阶函数的定义，将函数作为返回值</span></span><br><span class="line"><span class="comment">// 利用Object.prototype.toString.call('')判断类型</span></span><br><span class="line"><span class="keyword">const</span> Type = &#123;&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, type; type = [<span class="string">'String'</span>, <span class="string">'Array'</span>, <span class="string">'Number'</span>][i++];) &#123;</span><br><span class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">type</span>) </span>&#123;</span><br><span class="line">        Type[<span class="string">`is<span class="subst">$&#123;type&#125;</span>`</span>] = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(obj) === <span class="string">`[object <span class="subst">$&#123;type&#125;</span>]`</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)(type);zz</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">Type.isString(<span class="string">'str'</span>); <span class="comment">// true</span></span><br><span class="line">Type.isArray([]); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="https://badbirdfly.github.io/2021/07/17/记录一次又一次失败的面试/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -296,8 +416,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2021-08-02T20:46:28+08:00">
-              2021-08-02
+            <time title="Post modified" itemprop="dateModified" datetime="2021-08-16T07:40:20+08:00">
+              2021-08-16
             </time>
             
           </span>
@@ -514,8 +634,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2021-07-10T17:00:00+08:00">
-              2021-07-10
+            <time title="Post modified" itemprop="dateModified" datetime="2021-08-16T07:40:20+08:00">
+              2021-08-16
             </time>
             
           </span>
@@ -639,8 +759,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2021-07-22T22:27:19+08:00">
-              2021-07-22
+            <time title="Post modified" itemprop="dateModified" datetime="2021-08-16T07:40:20+08:00">
+              2021-08-16
             </time>
             
           </span>
@@ -775,8 +895,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2021-06-28T07:59:52+08:00">
-              2021-06-28
+            <time title="Post modified" itemprop="dateModified" datetime="2021-08-16T07:40:20+08:00">
+              2021-08-16
             </time>
             
           </span>
@@ -900,8 +1020,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-check-o"></i>
             </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2021-05-01T19:04:00+08:00">
-              2021-05-01
+            <time title="Post modified" itemprop="dateModified" datetime="2021-08-16T07:40:20+08:00">
+              2021-08-16
             </time>
             
           </span>
@@ -935,645 +1055,6 @@
         
           
             <h3 id="写法"><a href="#写法" class="headerlink" title="写法"></a>写法</h3><p>标签内容填充1-10<br><code>button${$}*10</code>再按Tab键</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://badbirdfly.github.io/2021/02/10/来放烟花🎆/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Zhang Di">
-    <meta itemprop="description" content>
-    <meta itemprop="image" content="/images/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="收集一杯雾">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="收集一杯雾" src>
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2021/02/10/来放烟花🎆/" itemprop="url">
-                  来放烟花🎆
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-02-10T11:34:22+08:00">
-              2021-02-10
-            </time>
-
-            &nbsp;|&nbsp;
-
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-check-o"></i>
-            </span>
-            <time title="Post modified" itemprop="dateModified" datetime="2021-07-10T21:56:56+08:00">
-              2021-07-10
-            </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <script>
-const arr = [
-    '凛冬散尽，星河长明，<br/>新的一年，万事顺遂。',
-    '愿新的一年，<br/>仍有阳光满路，<br/>温暖如初。',
-    '新的一年，万物更新，<br/>旧疾当愈，长安常安。',
-    '2021 <br/>顺心顺利 <br/>平安喜乐',
-    '会有始料不及的运气，<br/>会有突如其来的惊喜，<br/>愿新年，胜旧年。',
-    '希望新的一年，<br/>三餐四季，温柔有趣。',
-    '岁岁常欢愉，<br/>年年皆胜意。',
-    '如果他们都祝你新年快乐，<br/>那么我祝你遍历山河仍觉得人间值得。',
-    '祝所求皆所愿，<br/>所行化坦途，<br/>多喜乐，长安宁。',
-    '日事翻过往，<br/>新年迎新光。',
-    '最爱这人间烟火，<br/>家人闲坐，灯火辉煌。',
-    '万物更新，旧疾当愈；<br/>归途可喜，来日可期。',
-    '哇你超幸运，<br/>来找我领红包。',
-]
-const body = document.querySelector('body');
-// body.style.cursor = 'url(https://s3.ax1x.com/2021/02/10/y0BCMq.png), auto';
-const div = document.createElement('div');
-const fire = document.createElement('canvas');
-const bg = document.createElement('canvas');
-const p = document.createElement('p');
-const span = document.createElement('span');
-const span1 = document.createElement('span');
-p.style.cssText = `font-family: 翩翩体-简;
-    font-size: 18px;user-select: none;position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #fff;`
-bg.style.cssText = `position: absolute; left: 0; top: 0;`;
-// bg.style.cursor = 'url(https://s3.ax1x.com/2021/02/10/y0BCMq.png), auto';
-div.id = 'firework';
-div.style.cssText = `width: 100%; height: 100%; position: absolute; top:0; left: 0; z-index: 9999; overflow:hidden;`
-
-// 背景音乐
-// const audio = document.createElement('audio');
-// audio.src = 'https://y.music.163.com/m/song/1414870913/?userid=64898878&app_version=8.1.10 ';
-// audio.controls = true;
-// audio.autoplay = true;
-// audio.style.display = 'none';
-
-
-
-const frame = document.createElement('iframe');
-// frame.src = 'https://res.wx.qq.com/voice/getvoice?mediaid=MzkxNzIxMTY5MV8xMDAwMDAxMjQ=';
-frame.src = '//music.163.com/outchain/player?type=2&id=1346758452&auto=1&height=32';
-div.append(fire);
-div.append(bg);
-p.append(span);
-p.append(span1);
-div.append(p);
-// div.append(audio)
-div.append(frame);
-body.append(div);
-
-
-function cursor() {
-    span1.innerText = '|';
-    let cursorTimer = null;
-    let opc = 1;
-    cursorTimer = setInterval(() => {
-        opc = +!opc;
-        span1.style.opacity = opc;
-    }, 500);
-
-}
-// 打字效果
-function typing() {
-
-    const len = arr.length;
-    const random = Math.floor(Math.random() * len);
-    const wish = arr[random];
-    let timer = null;
-    let i = 0;
-    start();
-
-    function start() {
-        timer = setInterval(() => {
-            if (i > wish.length) {
-                clearInterval(timer);
-                timer = null;
-
-                // 隐藏光标
-                setTimeout(() => {
-                    // span1.style.opacity = 0;
-                    // clearTimeout(cursorTimer);
-
-                    // 重新
-                    // setTimeout(() => {
-                    //     i = 0;
-                    //     typing();
-                    // }, 5000);
-                    i = 0;
-                    typing();
-                }, 7000);
-
-            }
-            i++;
-            span.innerHTML = wish.slice(0, i + 1);
-            if (wish[i] === '，' || wish[i] === ' ') {
-                if (wish[i + 1] === '<') {
-                    i += 5;
-                }
-                clearInterval(timer);
-                timer = null;
-                setTimeout(() => {
-                    start();
-                }, 750);
-            }
-        }, 250);
-    }
-}
-setTimeout(() => {
-    frame.style.display = 'none';
-    cursor();
-    setTimeout(() => {
-        typing();
-    }, 1500);
-}, 1000);
-
-
-
-if( ('onhashchange' in window) && ((typeof document.documentMode==='undefined') || document.documentMode==8)) {
-    const href = decodeURI(window.location.href);
-    const idx = href.indexOf('来放烟花');
-    if (idx === -1) {
-        div.remove();
-        clearInterval(cursorTimer);
-        clearInterval(timer);
-    }
-}
-var RENDERER = {
-    LEAF_INTERVAL_RANGE : {min : 100, max : 200},
-    FIREWORK_INTERVAL_RANGE : {min : 20, max : 200},
-    SKY_COLOR : 'hsla(210, 60%, %luminance%, 0.2)',
-    STAR_COUNT : 100,
-
-    mouseDownHandler(e) {
-        var x = e.clientX;
-        var y = e.clientY;
-
-        this.fireworks.push(new FIREWORK(this.width, this.height, this, x, y));
-    },
-
-    init : function(){
-        this.setParameters();
-        this.reconstructMethod();
-        this.createTwigs();
-        this.createStars();
-        this.render();
-    },
-    setParameters : function(){
-        this.$container = document.querySelector('#firework');
-        this.width = parseInt(getComputedStyle(this.$container).width);
-        this.height = parseInt(getComputedStyle(this.$container).height);
-        this.distance = Math.sqrt(Math.pow(this.width / 2, 2) + Math.pow(this.height / 2, 2));
-        fire.width = this.width;
-        fire.height = this.height;
-        bg.width = this.width;
-        bg.height = this.height;
-        this.contextFireworks = fire.getContext('2d');
-        this.contextTwigs = bg.getContext('2d');
-
-        this.twigs = [];
-        this.leaves = [new LEAF(this.width, this.height, this)];
-        this.stars = [];
-        this.fireworks = [new FIREWORK(this.width, this.height, this)];
-
-        this.leafInterval = this.getRandomValue(this.LEAF_INTERVAL_RANGE) | 0;
-        this.maxFireworkInterval = this.getRandomValue(this.FIREWORK_INTERVAL_RANGE) | 0;
-        this.fireworkInterval = this.maxFireworkInterval;
-    },
-    reconstructMethod : function(){
-        this.render = this.render.bind(this);
-        this.mouseDownHandler = this.mouseDownHandler.bind(this);
-    },
-    getRandomValue : function(range){
-        return range.min + (range.max - range.min) * Math.random();
-    },
-    createTwigs : function(){
-        this.twigs.push(new TWIG(this.width, this.height, 0, 0, Math.PI * 3 / 4, 0));
-        this.twigs.push(new TWIG(this.width, this.height, this.width, 0, -Math.PI * 3 / 4, Math.PI));
-        this.twigs.push(new TWIG(this.width, this.height, 0, this.height, Math.PI / 4, Math.PI));
-        this.twigs.push(new TWIG(this.width, this.height, this.width, this.height, -Math.PI / 4, 0));
-    },
-    createStars : function(){
-        for(var i = 0, length = this.STAR_COUNT; i < length; i++){
-            this.stars.push(new STAR(this.width, this.height, this.contextTwigs, this));
-        }
-    },
-    render : function(){
-        requestAnimationFrame(this.render);
-
-        var maxOpacity = 0,
-            contextTwigs = this.contextTwigs,
-            contextFireworks = this.contextFireworks;
-
-        for(var i = this.fireworks.length - 1; i >= 0; i--){
-            maxOpacity = Math.max(maxOpacity, this.fireworks[i].getOpacity());
-        }
-        contextTwigs.clearRect(0, 0, this.width, this.height);
-        contextFireworks.fillStyle = this.SKY_COLOR.replace('%luminance', 5 + maxOpacity * 15);
-        contextFireworks.fillRect(0, 0, this.width, this.height);
-
-        for(var i = this.fireworks.length - 1; i >= 0; i--){
-            if(!this.fireworks[i].render(contextFireworks)){
-                this.fireworks.splice(i, 1);
-            }
-        }
-        for(var i = this.stars.length - 1; i >= 0; i--){
-            this.stars[i].render(contextTwigs);
-        }
-        for(var i = this.twigs.length - 1; i >= 0; i--){
-            this.twigs[i].render(contextTwigs);
-        }
-        for(var i = this.leaves.length - 1; i >= 0; i--){
-            if(!this.leaves[i].render(contextTwigs)){
-                this.leaves.splice(i, 1);
-            }
-        }
-        if(--this.leafInterval == 0){
-            this.leaves.push(new LEAF(this.width, this.height, this));
-            this.leafInterval = this.getRandomValue(this.LEAF_INTERVAL_RANGE) | 0;
-        }
-        if(--this.fireworkInterval == 0){
-            this.fireworks.push(new FIREWORK(this.width, this.height, this));
-            this.maxFireworkInterval = this.getRandomValue(this.FIREWORK_INTERVAL_RANGE) | 0;
-            this.fireworkInterval = this.maxFireworkInterval;
-        }
-    }
-};
-var TWIG = function(width, height, x, y, angle, theta){
-    this.width = width;
-    this.height = height;
-    this.x = x;
-    this.y = y;
-    this.angle = angle;
-    this.theta = theta;
-    this.rate = Math.min(width, height) / 1000;
-};
-TWIG.prototype = {
-    SHAKE_FREQUENCY : Math.PI / 300,
-    MAX_LEVEL : 3,
-    COLOR : 'hsl(120, 60%, 1%)',
-
-    renderBlock : function(context, x, y, length, level, angle){
-        context.save();
-        context.translate(x, y);
-        context.rotate(this.angle + angle * (level + 1));
-        context.scale(this.rate, this.rate);
-        context.beginPath();
-        context.moveTo(0, 0);
-        context.lineTo(0, -length);
-        context.stroke();
-        context.fill();
-
-        if(level == this.MAX_LEVEL){
-            length = length / (1 - level / 10);
-
-            context.save();
-            context.beginPath();
-            context.scale(1 - level / 10, 1 - level / 10);
-            context.moveTo(0, -length);
-            context.quadraticCurveTo(30, -length - 20, 0, -length - 80);
-            context.quadraticCurveTo(-30, -length - 20, 0, -length);
-            context.stroke();
-            context.fill();
-            context.restore();
-            context.restore();
-        }else{
-            for(var i = -1; i <= 1; i += 2){
-                context.save();
-                context.translate(0, -40);
-                context.rotate((Math.PI / 3 - Math.PI / 20 * level) * i);
-                context.scale(1 - level / 10, 1 - level / 10);
-                context.beginPath();
-                context.moveTo(0, 0);
-                context.lineTo(0, -length * 0.8);
-                context.quadraticCurveTo(30, -length * 0.8 - 20, 0, -length * 0.8 - 80);
-                context.quadraticCurveTo(-30, -length * 0.8 - 20, 0, -length * 0.8);
-                context.stroke();
-                context.fill();
-                context.restore();
-            }
-            context.restore();
-            level++;
-            this.renderBlock(context, x + 40 * Math.sin(this.angle + angle * level), y - 40 * Math.cos(this.angle + angle * level) , length, level, angle);
-        }
-    },
-    render : function(context){
-        context.fillStyle = this.COLOR;
-        context.strokeStyle = this.COLOR;
-        context.lineWidth = 3;
-        this.renderBlock(context, this.x, this.y, 60, 0,  Math.PI / 48 * Math.sin(this.theta));
-        this.theta += this.SHAKE_FREQUENCY;
-        this.theta %= Math.PI * 2;
-    }
-};
-var LEAF = function(width, height, renderer){
-    this.width = width;
-    this.height = height;
-    this.renderer = renderer;
-    this.init();
-};
-LEAF.prototype = {
-    OFFSET : 100,
-    VELOCITY_Y : 3,
-    COLOR : 'hsl(120, 60%, 1%)',
-
-    init : function(){
-        this.x = this.renderer.getRandomValue({min : 0, max : this.width});
-        this.y = -this.OFFSET;
-        this.vx = this.renderer.getRandomValue({min : 0, max : 1}) * (this.x <= this.width / 2 ? 1 : -1);
-        this.vy = this.VELOCITY_Y;
-
-        this.rate = this.renderer.getRandomValue({min : 0.4, max : 0.8});
-        this.theta = this.renderer.getRandomValue({min : 0, max : Math.PI * 2});
-        this.deltaTheta = this.renderer.getRandomValue({min : -Math.PI / 300, max : Math.PI / 300});
-    },
-    render : function(context){
-        context.save();
-        context.filleStyle = this.COLOR;
-        context.translate(this.x, this.y);
-        context.rotate(this.theta);
-        context.scale(this.rate, this.rate);
-        context.beginPath();
-        context.moveTo(0, 0);
-        context.quadraticCurveTo(30, -20, 0, -80);
-        context.quadraticCurveTo(-30, -20, 0, 0);
-        context.fill();
-        context.restore();
-
-        this.x += this.vx * this.rate;
-        this.y += this.vy * this.rate;
-        this.theta += this.deltaTheta;
-        this.theta %= Math.PI * 2;
-
-        return this.y <= this.height + this.OFFSET && this.x >= -this.OFFSET && this.x <= this.width + this.OFFSET;
-    }
-};
-var STAR = function(width, height, context, renderer){
-    this.width = width;
-    this.height = height;
-    this.renderer = renderer;
-    this.init(context);
-};
-STAR.prototype = {
-    RADIUS_RANGE : {min : 1, max : 4},
-    COUNT_RANGE : {min : 100, max : 1000},
-    DELTA_THETA : Math.PI / 30,
-    DELTA_PHI : Math.PI / 50000,
-
-    init : function(context){
-        this.x = this.renderer.getRandomValue({min : 0, max : this.width});
-        this.y = this.renderer.getRandomValue({min : 0, max : this.height});
-        this.radius = this.renderer.getRandomValue(this.RADIUS_RANGE);
-        this.maxCount = this.renderer.getRandomValue(this.COUNT_RANGE) | 0;
-        this.count = this.maxCount;
-        this.theta = 0;
-        this.phi = 0;
-
-        this.gradient = context.createRadialGradient(0, 0, 0, 0, 0, this.radius);
-        this.gradient.addColorStop(0, 'hsla(220, 80%, 100%, 1)');
-        this.gradient.addColorStop(0.1, 'hsla(220, 80%, 80%, 1)');
-        this.gradient.addColorStop(0.25, 'hsla(220, 80%, 50%, 1)');
-        this.gradient.addColorStop(1, 'hsla(220, 80%, 30%, 0)');
-    },
-    render : function(context){
-        context.save();
-        context.globalAlpha = Math.abs(Math.cos(this.theta));
-        context.translate(this.width / 2, this.height / 2);
-        context.rotate(this.phi);
-        context.translate(this.x - this.width / 2, this.y - this.height / 2);
-        context.beginPath();
-        context.fillStyle = this.gradient;
-        context.arc(0, 0, this.radius, 0, Math.PI * 2, false);
-        context.fill();
-        context.restore();
-
-        if(--this.count == 0){
-            this.theta = Math.PI;
-            this.count = this.maxCount;
-        }
-        if(this.theta > 0){
-            this.theta -= this.DELTA_THETA;
-        }
-        this.phi += this.DELTA_PHI;
-        this.phi %= Math.PI / 2;
-    }
-};
-var FIREWORK = function(width, height, renderer, x, y){
-    this.width = width;
-    this.height = height;
-    this.renderer = renderer;
-    this.init(x, y);
-};
-FIREWORK.prototype = {
-    COLOR : 'hsl(%hue, 80%, 60%)',
-    PARTICLE_COUNT : 300,
-    DELTA_OPACITY : 0.01,
-    RADIUS : 2,
-    VELOCITY : -3,
-    WAIT_COUNT_RANGE : {min : 30, max : 60},
-    THRESHOLD : 50,
-    DELTA_THETA : Math.PI / 10,
-    GRAVITY : 0.002,
-
-    init : function(x, y){
-        let status = 0;
-        if (x) {
-            status = 2;
-        }
-        this.setParameters(x, y, status);
-        this.createParticles();
-    },
-    setParameters : function(x, y, status){
-        var hue = 256 * Math.random() | 0;
-
-        this.x = x || this.renderer.getRandomValue({min : this.width / 8, max : this.width * 7 / 8});
-        this.y = y || this.renderer.getRandomValue({min : this.height / 4, max : this.height / 2});
-        this.x0 = this.x;
-        this.y0 = this.height + this.RADIUS;
-        this.color = this.COLOR.replace('%hue', hue);
-        this.status = status || 0;
-        this.theta = 0;
-        this.waitCount = this.renderer.getRandomValue(this.WAIT_COUNT_RANGE);
-        this.opacity = 1;
-        this.velocity = this.VELOCITY;
-        this.particles = [];
-    },
-    createParticles : function(){
-        for(var i = 0, length = this.PARTICLE_COUNT; i < length; i++){
-            this.particles.push(new PARTICLE(this.x, this.y, this.renderer));
-        }
-    },
-    getOpacity : function(){
-        return this.status == 2 ? this.opacity : 0;
-    },
-    render : function(context){
-        switch(this.status){
-        case 0:
-            context.save();
-            context.fillStyle = this.color;
-            context.globalCompositeOperation = 'lighter';
-            context.globalAlpha = (this.y0 - this.y) <= this.THRESHOLD ? ((this.y0 - this.y) / this.THRESHOLD) : 1;
-            context.translate(this.x0 + Math.sin(this.theta) / 2, this.y0);
-            context.scale(0.8, 2.4);
-            context.beginPath();
-            context.arc(0, 0, this.RADIUS, 0, Math.PI * 2, false);
-            context.fill();
-            context.restore();
-
-            this.y0 += this.velocity;
-
-            if(this.y0 <= this.y){
-                this.status = 1;
-            }
-            this.theta += this.DELTA_THETA;
-            this.theta %= Math.PI * 2;
-            this.velocity += this.GRAVITY;
-            return true;
-        case 1:
-            if(--this.waitCount <= 0){
-                this.status = 2;
-            }
-            return true;
-        case 2:
-            context.save();
-            context.globalCompositeOperation = 'lighter';
-            context.globalAlpha = this.opacity;
-            context.fillStyle = this.color;
-
-            for(var i = 0, length = this.particles.length; i < length; i++){
-                this.particles[i].render(context, this.opacity);
-            }
-            context.restore();
-            this.opacity -= this.DELTA_OPACITY;
-            return this.opacity > 0;
-        }
-    }
-};
-var PARTICLE = function(x, y, renderer){
-    this.x = x;
-    this.y = y;
-    this.renderer = renderer;
-    this.init();
-};
-PARTICLE.prototype = {
-    RADIUS : 1.5,
-    VELOCITY_RANGE : {min : 0, max : 3},
-    GRAVITY : 0.02,
-    FRICTION : 0.98,
-
-    init : function(){
-        var radian = Math.PI * 2 * Math.random(),
-            velocity = (1 - Math.pow(Math.random(), 6)) * this.VELOCITY_RANGE.max,
-            rate = Math.random();
-
-        this.vx = velocity * Math.cos(radian) * rate;
-        this.vy = velocity * Math.sin(radian) * rate;
-    },
-    render : function(context, opacity){
-        context.beginPath();
-        context.arc(this.x, this.y, this.RADIUS, 0, Math.PI * 2, false);
-        context.fill();
-
-        this.x += this.vx;
-        this.y += this.vy;
-        this.vy += this.GRAVITY;
-        this.vx *= this.FRICTION;
-        this.vy *= this.FRICTION;
-    }
-};
-RENDERER.init();
-
-document.addEventListener('mousedown', RENDERER.mouseDownHandler, false);
-</script>
-
-
-<p>点击标题看烟花！</p>
-<p>记得点击屏幕哦～</p>
-<p><a href="https://codepen.io/search/pens?q=fireworks" target="_blank" rel="noopener">参考链接</a></p>
 
           
         
@@ -1646,7 +1127,7 @@ document.addEventListener('mousedown', RENDERER.mouseDownHandler, false);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">37</span>
+              <span class="site-state-item-count">38</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
